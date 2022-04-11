@@ -19,7 +19,7 @@ entity register_file is
         D1 : out std_logic_vector(15 downto 0);
         D2 : out std_logic_vector(15 downto 0);
 
-        R7_PC : out std_logic_vector(15 downto 0);
+        R7_PC : out std_logic_vector(15 downto 0)
 
     );
 end entity;
