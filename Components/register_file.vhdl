@@ -12,8 +12,11 @@ entity register_file is
         D3 : in std_logic_vector(15 downto 0);
 
         write_enable : in std_logic;
+        read_enable : in std_logic;
 
         reset : in std_logic;
+
+        clk : in std_logic;
 
         --output data
         D1 : out std_logic_vector(15 downto 0);
@@ -35,32 +38,34 @@ architecture rf of register_file is
     signal R7 : std_logic_vector(15 downto 0);
 begin
     --writing to register when write_enable is set
-    write: process(A3,write_enable)
+    write: process(A3,write_enable,clk)
     begin
-        if(write_enable = '1') then
-            if(A3 = "000") then
-                R0 <= D3;
-            end if;
-            if(A3 = "001") then
-                R1 <= D3;
-            end if;
-            if(A3 = "010") then
-                R2 <= D3;
-            end if;
-            if(A3 = "011") then
-                R3 <= D3;
-            end if;
-            if(A3 = "100") then
-                R4 <= D3;
-            end if;
-            if(A3 = "101") then
-                R5 <= D3;
-            end if;
-            if(A3 = "110") then
-                R6 <= D3;
-            end if;
-            if(A3 = "111") then
-                R7 <= D3;
+        if (clk'event and clk = '0') then  --writing at negative clock edge
+            if(write_enable = '1') then
+                if(A3 = "000") then
+                    R0 <= D3;
+                end if;
+                if(A3 = "001") then
+                    R1 <= D3;
+                end if;
+                if(A3 = "010") then
+                    R2 <= D3;
+                end if;
+                if(A3 = "011") then
+                    R3 <= D3;
+                end if;
+                if(A3 = "100") then
+                    R4 <= D3;
+                end if;
+                if(A3 = "101") then
+                    R5 <= D3;
+                end if;
+                if(A3 = "110") then
+                    R6 <= D3;
+                end if;
+                if(A3 = "111") then
+                    R7 <= D3;
+                end if;
             end if;
         end if;
     end process write;
@@ -71,55 +76,57 @@ begin
     signal D2_temp : std_logic_vector(15 downto 0);
 
     begin
-        if(A1 = "000") then
-            D1_temp := R0;
+        if(read_enable = '1') then
+            if(A1 = "000") then
+                D1_temp := R0;
+            end if;
+            if(A1 = "001") then
+                D1_temp := R1;
+            end if;
+            if(A1 = "010") then
+                D1_temp := R2;
+            end if;
+            if(A1 = "011") then
+                D1_temp := R3;
+            end if;
+            if(A1 = "100") then
+                D1_temp := R4;
+            end if;
+            if(A1 = "101") then
+                D1_temp := R5;
+            end if;
+            if(A1 = "110") then
+                D1_temp := R6;
+            end if;
+            if(A1 = "111") then
+                D1_temp := R7;
+            end if;
+            --Address 2
+            if(A2 = "000") then
+                D2_temp := R0;
+            end if;
+            if(A2 = "001") then
+                D2_temp := R1;
+            end if;
+            if(A2 = "010") then
+                D2_temp := R2;
+            end if;
+            if(A2 = "011") then
+                D2_temp := R3;
+            end if;
+            if(A2 = "100") then
+                D2_temp := R4;
+            end if;
+            if(A2 = "101") then
+                D2_temp := R5;
+            end if;
+            if(A2 = "110") then
+                D2_temp := R6;
+            end if;
+            if(A2 = "111") then
+                D2_temp := R7;
+            end if;    
         end if;
-        if(A1 = "001") then
-            D1_temp := R1;
-        end if;
-        if(A1 = "010") then
-            D1_temp := R2;
-        end if;
-        if(A1 = "011") then
-            D1_temp := R3;
-        end if;
-        if(A1 = "100") then
-            D1_temp := R4;
-        end if;
-        if(A1 = "101") then
-            D1_temp := R5;
-        end if;
-        if(A1 = "110") then
-            D1_temp := R6;
-        end if;
-        if(A1 = "111") then
-            D1_temp := R7;
-        end if;
-        --Address 2
-        if(A2 = "000") then
-            D2_temp := R0;
-        end if;
-        if(A2 = "001") then
-            D2_temp := R1;
-        end if;
-        if(A2 = "010") then
-            D2_temp := R2;
-        end if;
-        if(A2 = "011") then
-            D2_temp := R3;
-        end if;
-        if(A2 = "100") then
-            D2_temp := R4;
-        end if;
-        if(A2 = "101") then
-            D2_temp := R5;
-        end if;
-        if(A2 = "110") then
-            D2_temp := R6;
-        end if;
-        if(A2 = "111") then
-            D2_temp := R7;
-        end if;    
         D1 <= D1_temp;
         D2 <= D2_temp;
     end process read;
