@@ -1,0 +1,1098 @@
+Analysis & Synthesis report for DUT
+Fri Apr 15 20:03:45 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DUT|iitb_risc:add_instance|controller:cotroller_main|scurr
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Apr 15 20:03:45 2022       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 3                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                            ; DUT                ; DUT                ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; state_controller.vhdl            ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl   ;         ;
+; sign_extend10.vhdl               ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl      ;         ;
+; sign_extend7.vhdl                ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl       ;         ;
+; risc.vhdl                        ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl               ;         ;
+; register_file.vhdl               ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl      ;         ;
+; register_component.vhdl          ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl ;         ;
+; pad7.vhdl                        ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl               ;         ;
+; memory.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl             ;         ;
+; lshift.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl             ;         ;
+; DUT.vhdl                         ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl                ;         ;
+; datapath.vhdl                    ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl           ;         ;
+; comp.vhdl                        ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl               ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd                 ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 3     ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |DUT                       ; 0 (0)       ; 0            ; 0          ; 3    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT                ; DUT         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DUT|iitb_risc:add_instance|controller:cotroller_main|scurr                                                                                                                                                                                                                                                                                                                     ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; scurr.s31 ; scurr.s30 ; scurr.s29 ; scurr.s28 ; scurr.s27 ; scurr.s26 ; scurr.s25 ; scurr.s24 ; scurr.s23 ; scurr.s22 ; scurr.s21 ; scurr.s20 ; scurr.s19 ; scurr.s18 ; scurr.s17 ; scurr.s16 ; scurr.s15 ; scurr.s14 ; scurr.s13 ; scurr.s12 ; scurr.s11 ; scurr.s10 ; scurr.s9 ; scurr.s8 ; scurr.s7 ; scurr.s6 ; scurr.s5 ; scurr.s4 ; scurr.s3 ; scurr.s2 ; scurr.s0 ; scurr.s1 ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; scurr.s1  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; scurr.s0  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; scurr.s2  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; scurr.s3  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; scurr.s4  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s5  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s6  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s7  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s8  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s9  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s10 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s11 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s12 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s13 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s14 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s15 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s16 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s17 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s18 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s19 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s20 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s21 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s22 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s23 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s24 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s25 ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s26 ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s27 ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s28 ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s29 ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s30 ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; scurr.s31 ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                              ;
++----------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                          ; Reason for Removal                     ;
++----------------------------------------------------------------------------------------+----------------------------------------+
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t2|r_out[0..15]       ; Stuck at GND due to stuck port data_in ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R1[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R2[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R3[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R4[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R5[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R6[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s3                              ; Stuck at GND due to stuck port data_in ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s4                              ; Stuck at GND due to stuck port data_in ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[0..7,12..15] ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[0]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[0]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[1]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[1]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[2]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[2]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[3]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[3]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[4]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[4]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[5]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[5]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[6]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[6]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[7]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[7]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[8]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[8]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[8]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[9]                   ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[9]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[10]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[10]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[11]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[11]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[12]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[12]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[13]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[13]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[14]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[14]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[15]                  ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[15]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[0..6]      ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[0]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[9..11]       ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[1..6]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[7]         ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[7]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[8]         ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[8]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[9]         ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[9]           ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[10]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[10]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[11]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[11]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[12]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[12]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[13]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[13]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[14]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[14]          ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[15]        ; Lost fanout                            ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[15]          ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s1                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s0                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s2                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s5                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s6                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s7                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s8                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s9                              ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s10                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s11                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s12                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s13                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s14                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s15                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s16                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s17                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s18                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s19                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s20                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s21                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s22                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s23                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s24                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s25                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s26                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s27                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s28                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s29                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s30                             ; Lost fanout                            ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s31                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 240                                                ;                                        ;
++----------------------------------------------------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                 ;
++------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; Register name                                                                ; Reason for Removal        ; Registers Removed due to This Register                                           ;
++------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s3                    ; Stuck at GND              ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[0],            ;
+;                                                                              ; due to stuck port data_in ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[1],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[2],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[3],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[4],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[5],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[6],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[7],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[8],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[9],            ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[10],           ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[11],           ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[12],           ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[13],           ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[14],           ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R7[15],           ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s1,                       ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s0,                       ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s2,                       ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s5,                       ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s8                        ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[15]        ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[6],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[0],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[1],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[2],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[3],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[8],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[15],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[9],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[10],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[11],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[15], ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[15]    ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t2|r_out[4] ; Stuck at GND              ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[15],   ;
+;                                                                              ; due to stuck port data_in ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[14],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[13],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[12],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[0],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[1],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[5],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[4]     ;
+; iitb_risc:add_instance|controller:cotroller_main|scurr.s4                    ; Stuck at GND              ; iitb_risc:add_instance|controller:cotroller_main|scurr.s6,                       ;
+;                                                                              ; due to stuck port data_in ; iitb_risc:add_instance|controller:cotroller_main|scurr.s7,                       ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s9,                       ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s11,                      ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s12,                      ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s13,                      ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s14,                      ;
+;                                                                              ;                           ; iitb_risc:add_instance|controller:cotroller_main|scurr.s15                       ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[14]        ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[7],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[14],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[14], ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[14]    ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[13]        ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[13],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[13], ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[13]    ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[12]        ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[12],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[12], ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[12]    ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[11]        ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[11],   ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[11], ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[11]    ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[9]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[9],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[9],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[9]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[8]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[8],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[8],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[8]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[7]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[7],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[7],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[7]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[6]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[6],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[6],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[6]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[5]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[5],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[5],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[5]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[4]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[4],    ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[4],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[4]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[10]        ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[10], ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[10]    ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[3]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[3],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[3]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[2]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[2],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[2]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[1]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[1],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[1]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_file:rf|R0[0]         ; Lost Fanouts              ; iitb_risc:add_instance|datapath:datapath_main|register_component:tsum|r_out[0],  ;
+;                                                                              ;                           ; iitb_risc:add_instance|datapath:datapath_main|register_component:t3|r_out[0]     ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t2|r_out[9] ; Stuck at GND              ; iitb_risc:add_instance|datapath:datapath_main|register_component:t1|r_out[10]    ;
+;                                                                              ; due to stuck port data_in ;                                                                                  ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t2|r_out[3] ; Stuck at GND              ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[3]     ;
+;                                                                              ; due to stuck port data_in ;                                                                                  ;
+; iitb_risc:add_instance|datapath:datapath_main|register_component:t2|r_out[2] ; Stuck at GND              ; iitb_risc:add_instance|datapath:datapath_main|register_component:ir|r_out[2]     ;
+;                                                                              ; due to stuck port data_in ;                                                                                  ;
++------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |DUT|iitb_risc:add_instance|controller:cotroller_main|scurr                               ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[0] ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[6] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |DUT|iitb_risc:add_instance|controller:cotroller_main|scurr                               ;
+; 13:1               ; 5 bits    ; 40 LEs        ; 5 LEs                ; 35 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux92                                  ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux96                                  ;
+; 14:1               ; 9 bits    ; 81 LEs        ; 18 LEs               ; 63 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux115                                 ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux101                                 ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux62                                  ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux34                                  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux4                                   ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 14 LEs               ; 35 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux18                                  ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 27 LEs               ; 36 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux5                                   ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux106                                 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux129                                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux71                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |DUT|iitb_risc:add_instance|datapath:datapath_main|Mux84                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Apr 15 20:03:36 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-RISC -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhdl
+    Info (12022): Found design unit 1: Testbench-Behave File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl Line: 9
+    Info (12023): Found entity 1: Testbench File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file state_controller.vhdl
+    Info (12022): Found design unit 1: controller-fsm File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl Line: 15
+    Info (12023): Found entity 1: controller File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sign_extend10.vhdl
+    Info (12022): Found design unit 1: sign_extend10-extend10 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl Line: 10
+    Info (12023): Found entity 1: sign_extend10 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file sign_extend7.vhdl
+    Info (12022): Found design unit 1: sign_extend7-extend7 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl Line: 10
+    Info (12023): Found entity 1: sign_extend7 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file risc.vhdl
+    Info (12022): Found design unit 1: iitb_risc-final File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl Line: 12
+    Info (12023): Found entity 1: iitb_risc File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhdl
+    Info (12022): Found design unit 1: register_file-rf File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 30
+    Info (12023): Found entity 1: register_file File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file register_component.vhdl
+    Info (12022): Found design unit 1: register_component-rc File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl Line: 20
+    Info (12023): Found entity 1: register_component File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file pad7.vhdl
+    Info (12022): Found design unit 1: pad7-pad File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl Line: 10
+    Info (12023): Found entity 1: pad7 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhdl
+    Info (12022): Found design unit 1: memory-memory_a File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl Line: 27
+    Info (12023): Found entity 1: memory File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file lshift.vhdl
+    Info (12022): Found design unit 1: left_shift-shift File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl Line: 10
+    Info (12023): Found entity 1: left_shift File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file dut.vhdl
+    Info (12022): Found design unit 1: DUT-DutWrap File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl Line: 8
+    Info (12023): Found entity 1: DUT File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhdl
+    Info (12022): Found design unit 1: datapath-arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 17
+    Info (12023): Found entity 1: datapath File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file comp.vhdl
+    Info (12022): Found design unit 1: comparator-compare File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl Line: 12
+    Info (12023): Found entity 1: comparator File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-a1 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 17
+    Info (12023): Found entity 1: ALU File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 4
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "iitb_risc" for hierarchy "iitb_risc:add_instance" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl Line: 15
+Info (12128): Elaborating entity "controller" for hierarchy "iitb_risc:add_instance|controller:cotroller_main" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl Line: 41
+Info (12128): Elaborating entity "datapath" for hierarchy "iitb_risc:add_instance|datapath:datapath_main" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl Line: 42
+Warning (10541): VHDL Signal Declaration warning at datapath.vhdl(89): used implicit default value for signal "rfread" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 89
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(121): signal "r7out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 121
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(122): signal "r7out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 122
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(124): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 124
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(127): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 127
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(128): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 128
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(131): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 131
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(132): signal "aluCo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 132
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(136): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 136
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(136): signal "lso" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 136
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(137): signal "t2out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 137
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(140): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 140
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(142): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 142
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(143): signal "tsumout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 143
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(147): signal "t3out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 147
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(150): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 150
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(150): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 150
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(151): signal "t2out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 151
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(153): signal "se10" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 153
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(157): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 157
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(158): signal "tsumout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 158
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(161): signal "pado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 161
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(162): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 162
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(165): signal "tsumout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 165
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(166): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 166
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(169): signal "tsumout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 169
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(170): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 170
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(173): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 173
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(174): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 174
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(175): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 175
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(180): signal "r7out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 180
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(181): signal "se10" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 181
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(183): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 183
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(186): signal "r7out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 186
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(187): signal "se7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 187
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(188): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 188
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(190): signal "t3out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 190
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(191): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 191
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(194): signal "t3out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 194
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(195): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 195
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(196): signal "rd2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 196
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(199): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 199
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(200): signal "se7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 200
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(201): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 201
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(205): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 205
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(206): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 206
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(207): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 207
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(210): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 210
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(213): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 213
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(215): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 215
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(216): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 216
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(217): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 217
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(220): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 220
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(223): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 223
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(225): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 225
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(226): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 226
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(227): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 227
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(230): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 230
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(233): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 233
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(235): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 235
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(236): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 236
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(237): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 237
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(240): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 240
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(243): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 243
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(245): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 245
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(246): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 246
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(247): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 247
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(250): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 250
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(253): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 253
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(255): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 255
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(256): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 256
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(257): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 257
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(260): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 260
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(263): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 263
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(265): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 265
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(266): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 266
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(267): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 267
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(270): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 270
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(273): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 273
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(275): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 275
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(276): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 276
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(277): signal "memDo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 277
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(280): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 280
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(283): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 283
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(285): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 285
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(286): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 286
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(287): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 287
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(290): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 290
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(293): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 293
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(295): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 295
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(296): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 296
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(297): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 297
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(300): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 300
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(303): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 303
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(305): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 305
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(306): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 306
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(307): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 307
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(310): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 310
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(313): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 313
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(315): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 315
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(316): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 316
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(317): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 317
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(320): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 320
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(323): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 323
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(325): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 325
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(326): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 326
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(327): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 327
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(330): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 330
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(333): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 333
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(335): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 335
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(336): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 336
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(337): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 337
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(340): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 340
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(343): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 343
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(345): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 345
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(346): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 346
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(347): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 347
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(350): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 350
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(353): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 353
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(355): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 355
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(356): signal "irout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 356
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(357): signal "rd1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 357
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(360): signal "t1out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 360
+Warning (10492): VHDL Process Statement warning at datapath.vhdl(363): signal "aluO" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 363
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "memAddr", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "aluA", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "aluB", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "t3in", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "ra1", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "t1in", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "aluCi", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "aluOp", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "ra3", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "rd3", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Warning (10631): VHDL Process Statement warning at datapath.vhdl(117): inferring latch(es) for signal or variable "memDi", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memDi[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "rd3[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "ra3[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "ra3[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "ra3[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluOp" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluCi" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t1in[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "ra1[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "ra1[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "ra1[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "t3in[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluB[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "aluA[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[0]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[1]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[2]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[3]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[4]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[5]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[6]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[7]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[8]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[9]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[10]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[11]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[12]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[13]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[14]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (10041): Inferred latch for "memAddr[15]" at datapath.vhdl(117) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 117
+Info (12128): Elaborating entity "register_component" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|register_component:t1" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 95
+Info (12128): Elaborating entity "ALU" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|ALU:alu_instance" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 101
+Warning (10492): VHDL Process Statement warning at ALU.vhd(27): signal "C_init" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at ALU.vhd(28): signal "C_init" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at ALU.vhd(31): signal "C_init" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at ALU.vhd(33): signal "outSum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at ALU.vhd(34): signal "outSum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at ALU.vhd(34): signal "C_init" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at ALU.vhd(43): signal "outNAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at ALU.vhd(44): signal "outNAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at ALU.vhd(22): inferring latch(es) for signal or variable "outSum", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at ALU.vhd(22): inferring latch(es) for signal or variable "Cout", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at ALU.vhd(22): inferring latch(es) for signal or variable "outNAND", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[0]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[1]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[2]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[3]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[4]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[5]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[6]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[7]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[8]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[9]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[10]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[11]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[12]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[13]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[14]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outNAND[15]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "Cout" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[0]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[1]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[2]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[3]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[4]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[5]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[6]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[7]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[8]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[9]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[10]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[11]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[12]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[13]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[14]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (10041): Inferred latch for "outSum[15]" at ALU.vhd(22) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd Line: 22
+Info (12128): Elaborating entity "comparator" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|comparator:comp" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 103
+Info (12128): Elaborating entity "left_shift" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|left_shift:lshift" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 105
+Info (12128): Elaborating entity "memory" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|memory:mem" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 107
+Info (12128): Elaborating entity "pad7" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|pad7:pad" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 109
+Info (12128): Elaborating entity "register_file" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|register_file:rf" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 111
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(88): signal "read_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(90): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 90
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(93): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 93
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(96): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 96
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(99): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 99
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(102): signal "R4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 102
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(105): signal "R5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 105
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(108): signal "R6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 108
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(111): signal "R7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 111
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(115): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 115
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(118): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 118
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(121): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 121
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(124): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 124
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(127): signal "R4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 127
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(130): signal "R5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 130
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(133): signal "R6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 133
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(136): signal "R7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 136
+Warning (10631): VHDL Process Statement warning at register_file.vhdl(83): inferring latch(es) for signal or variable "D1_temp", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 83
+Warning (10631): VHDL Process Statement warning at register_file.vhdl(83): inferring latch(es) for signal or variable "D2_temp", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 83
+Info (10041): Inferred latch for "read_proc:D2_temp[0]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[1]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[2]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[3]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[4]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[5]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[6]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[7]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[8]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[9]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[10]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[11]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[12]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[13]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[14]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D2_temp[15]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[0]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[1]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[2]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[3]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[4]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[5]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[6]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[7]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[8]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[9]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[10]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[11]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[12]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[13]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[14]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (10041): Inferred latch for "read_proc:D1_temp[15]" at register_file.vhdl(88) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl Line: 88
+Info (12128): Elaborating entity "sign_extend10" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|sign_extend10:sign_extend_10" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 113
+Info (12128): Elaborating entity "sign_extend7" for hierarchy "iitb_risc:add_instance|datapath:datapath_main|sign_extend7:sign_extend_7" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 114
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[4]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[3]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[2]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[1]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[0]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[5]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[6]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[7]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[8]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[9]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[10]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[11]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[12]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[13]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[14]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[15]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[0]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[1]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[2]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[3]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[4]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[5]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[6]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[7]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[8]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[9]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[10]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[11]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[12]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[13]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[14]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[15]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[15]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[14]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[13]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[12]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[11]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[10]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[9]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[8]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[7]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[6]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[5]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[4]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[3]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[2]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[1]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D1_temp[0]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[15]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[14]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[13]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[12]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[11]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[10]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[9]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[8]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[7]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[6]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[5]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[4]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[3]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[2]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[1]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|register_file:rf|\read_proc:D2_temp[0]" is permanently disabled
+Warning (14025): LATCH primitive "iitb_risc:add_instance|datapath:datapath_main|aluCi" is permanently disabled File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl Line: 89
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output_vector[0]" is stuck at VCC File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl Line: 5
+Info (17049): 222 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "input_vector[1]" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl Line: 4
+    Warning (15610): No output dependent on input pin "input_vector[0]" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl Line: 4
+Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 236 warnings
+    Info: Peak virtual memory: 4761 megabytes
+    Info: Processing ended: Fri Apr 15 20:03:45 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+

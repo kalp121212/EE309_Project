@@ -1,0 +1,593 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/simulation/modelsim
+Ealu
+Z1 w1650029495
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 12
+R0
+Z4 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd
+Z5 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd
+l0
+L4 1
+Vze@_n[CMUS[UBO397Y69H0
+!s100 d8HFa9jW]Q0X5`YNQGghX3
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1650038457
+!i10b 1
+Z8 !s108 1650038457.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd|
+Z10 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/ALU.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aa1
+R2
+R3
+DEx4 work 3 alu 0 22 ze@_n[CMUS[UBO397Y69H0
+!i122 12
+l21
+L17 35
+VH?mBSYb^YI;^kJ05zbjY`0
+!s100 :JARRSzGeOQRNWz^D0f[a0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecomparator
+Z13 w1650027584
+R2
+R3
+!i122 11
+R0
+Z14 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl
+Z15 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl
+l0
+L4 1
+VSoDo^z]EVdn:>zg;>TXgz0
+!s100 DAIna^P1e2O[1I8`nCG`M0
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl|
+Z17 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/comp.vhdl|
+!i113 1
+R11
+R12
+Acompare
+R2
+R3
+DEx4 work 10 comparator 0 22 SoDo^z]EVdn:>zg;>TXgz0
+!i122 11
+l13
+L12 6
+V]66hI7hD9KV?ADU2[]aL23
+!s100 1M0c_O:_MgBjGc<4:F<_32
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Econtroller
+Z18 w1650031309
+Z19 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 0
+R0
+Z20 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl
+Z21 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl
+l0
+L5 1
+V?WKY`PTKEjP<UHmei`g`E2
+!s100 fo1Jme]SD=F8V]ZcTPJfA1
+R6
+31
+Z22 !s110 1650038455
+!i10b 1
+Z23 !s108 1650038455.000000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl|
+Z25 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/state_controller.vhdl|
+!i113 1
+R11
+R12
+Afsm
+R19
+R2
+R3
+DEx4 work 10 controller 0 22 ?WKY`PTKEjP<UHmei`g`E2
+!i122 0
+l20
+L15 147
+VXPXJCDW=6mE2dP:e22>@=1
+!s100 k]d3kk5:CddR8=KVVafD22
+R6
+31
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R11
+R12
+Edatapath
+Z26 w1650032052
+R19
+R2
+R3
+!i122 10
+R0
+Z27 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl
+Z28 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl
+l0
+L6 1
+Vi>CUbP_P41XIFVjdo4ik92
+!s100 HJ:KaN3PneL1P=k=ljDH]2
+R6
+31
+R7
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl|
+Z30 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/datapath.vhdl|
+!i113 1
+R11
+R12
+Aarch
+R19
+R2
+R3
+DEx4 work 8 datapath 0 22 i>CUbP_P41XIFVjdo4ik92
+!i122 10
+l93
+L17 358
+VbIGP3H]AFG3^0aJe0E;RK0
+!s100 <kfZ9>n@FE`3B3clD4C1R0
+R6
+31
+R7
+!i10b 1
+R8
+R29
+R30
+!i113 1
+R11
+R12
+Edut
+Z31 w1650032412
+R2
+R3
+!i122 9
+R0
+Z32 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl
+Z33 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl
+l0
+L3 1
+VE^C6=J_alZ6E>e82K0F2A3
+!s100 ^N=VYj^h`:Nk=HFDj3_Tc3
+R6
+31
+R7
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl|
+Z35 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/DUT.vhdl|
+!i113 1
+R11
+R12
+Adutwrap
+R2
+R3
+DEx4 work 3 dut 0 22 E^C6=J_alZ6E>e82K0F2A3
+!i122 9
+l14
+L8 15
+VG^F5X[R]i>zk2PzGAPF:@3
+!s100 b;Qk?nE@@M]jJ]Y<WQ4bI2
+R6
+31
+R7
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12
+Eiitb_risc
+Z36 w1650032350
+R19
+R2
+R3
+!i122 3
+R0
+Z37 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl
+Z38 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl
+l0
+L5 1
+V2]b>_og_FV22kMO]Fz><C1
+!s100 R2@Oj^O:QN?k>dR1<g]4@1
+R6
+31
+R22
+!i10b 1
+R23
+Z39 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl|
+Z40 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/risc.vhdl|
+!i113 1
+R11
+R12
+Afinal
+R19
+R2
+R3
+DEx4 work 9 iitb_risc 0 22 2]b>_og_FV22kMO]Fz><C1
+!i122 3
+l39
+L12 34
+VGXdOdJ@gg@5fY_IgzXFZ00
+!s100 =P@[n=iNifQF@ej>8o=Yl3
+R6
+31
+R22
+!i10b 1
+R23
+R39
+R40
+!i113 1
+R11
+R12
+Eleft_shift
+R13
+R2
+R3
+!i122 8
+R0
+Z41 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl
+Z42 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl
+l0
+L4 1
+VA:FVjJ`F:ZcBSo0@knYln2
+!s100 35ZzI2RFiogMDjM[C]c?G0
+R6
+31
+Z43 !s110 1650038456
+!i10b 1
+Z44 !s108 1650038456.000000
+Z45 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl|
+Z46 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/lshift.vhdl|
+!i113 1
+R11
+R12
+Ashift
+R2
+R3
+DEx4 work 10 left_shift 0 22 A:FVjJ`F:ZcBSo0@knYln2
+!i122 8
+l11
+Z47 L10 7
+V@SI17hAf1Uf6DcVP>BC4h2
+!s100 ^4nRBPdd7;4QG3g[69ml=0
+R6
+31
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R11
+R12
+Ememory
+Z48 w1650033212
+R19
+R2
+R3
+!i122 7
+R0
+Z49 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl
+Z50 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl
+l0
+L5 1
+V3a=gT1a]Ad<J_W;b:;Y?h1
+!s100 SY`ac^WVJ`I@mR_Ghde5l1
+R6
+31
+R43
+!i10b 1
+R44
+Z51 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl|
+Z52 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/memory.vhdl|
+!i113 1
+R11
+R12
+Amemory_a
+R19
+R2
+R3
+DEx4 work 6 memory 0 22 3a=gT1a]Ad<J_W;b:;Y?h1
+!i122 7
+l31
+L27 27
+V[E09l`5bP`Jif3V6dYMAS1
+!s100 2D_4NliCA``Bm=hA4iW:^2
+R6
+31
+R43
+!i10b 1
+R44
+R51
+R52
+!i113 1
+R11
+R12
+Epad7
+Z53 w1650028725
+R2
+R3
+!i122 6
+R0
+Z54 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl
+Z55 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl
+l0
+L4 1
+V^53IS@?8WP32HO[z?h:]k1
+!s100 Z^[QQa>OUURcAmNN?[k^i2
+R6
+31
+R43
+!i10b 1
+R44
+Z56 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl|
+Z57 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/pad7.vhdl|
+!i113 1
+R11
+R12
+Apad
+R2
+R3
+DEx4 work 4 pad7 0 22 ^53IS@?8WP32HO[z?h:]k1
+!i122 6
+l11
+R47
+V>RnzFQgAo]Z<iYjD5<aIl2
+!s100 0Hz@M:hc>Aj;`0ki@__HC0
+R6
+31
+R43
+!i10b 1
+R44
+R56
+R57
+!i113 1
+R11
+R12
+Eregister_component
+Z58 w1650030178
+R2
+R3
+!i122 5
+R0
+Z59 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl
+Z60 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl
+l0
+L4 1
+V]Y6<lUh5jKg5hQ=n=jzCI0
+!s100 kG?98HL]DWmU9a[gm^KE[2
+R6
+31
+R43
+!i10b 1
+R44
+Z61 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl|
+Z62 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_component.vhdl|
+!i113 1
+R11
+R12
+Arc
+R2
+R3
+DEx4 work 18 register_component 0 22 ]Y6<lUh5jKg5hQ=n=jzCI0
+!i122 5
+l22
+L20 19
+VZ3G_?JkhQ10TzF6aH2HPk2
+!s100 ;C_gL<?A0g4LmDBR=oN5O2
+R6
+31
+R43
+!i10b 1
+R44
+R61
+R62
+!i113 1
+R11
+R12
+Eregister_file
+Z63 w1650030375
+R2
+R3
+!i122 4
+R0
+Z64 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl
+Z65 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl
+l0
+L4 1
+Vl>kELDm;[;<Seo7^YEZAR0
+!s100 9W_ePelaWX>F1^WK3C50c3
+R6
+31
+R43
+!i10b 1
+R44
+Z66 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl|
+Z67 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/register_file.vhdl|
+!i113 1
+R11
+R12
+Arf
+R2
+R3
+DEx4 work 13 register_file 0 22 l>kELDm;[;<Seo7^YEZAR0
+!i122 4
+l39
+L30 129
+VWaEQNdQ2W<kNdHPco63CG2
+!s100 ^kU1V0I3c=K:WJ4QC`jfi2
+R6
+31
+R43
+!i10b 1
+R44
+R66
+R67
+!i113 1
+R11
+R12
+Esign_extend10
+Z68 w1650028514
+R2
+R3
+!i122 1
+R0
+Z69 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl
+Z70 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl
+l0
+L4 1
+ViEJU9biLJW6doFIF>Si=40
+!s100 <Ug;5CH:cJb`lY7]i:7Mg2
+R6
+31
+R22
+!i10b 1
+R23
+Z71 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl|
+Z72 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend10.vhdl|
+!i113 1
+R11
+R12
+Aextend10
+R2
+R3
+DEx4 work 13 sign_extend10 0 22 iEJU9biLJW6doFIF>Si=40
+!i122 1
+l11
+R47
+VaD?oP<X:UZd9UH_d0I6lM1
+!s100 AleH8>HbaULF9BK2nNgzB2
+R6
+31
+R22
+!i10b 1
+R23
+R71
+R72
+!i113 1
+R11
+R12
+Esign_extend7
+Z73 w1650028796
+R2
+R3
+!i122 2
+R0
+Z74 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl
+Z75 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl
+l0
+L4 1
+VzMLfzOo3_gKLFC7Bn@62K3
+!s100 VN61MoUM02OzEiCR3_0lI3
+R6
+31
+R22
+!i10b 1
+R23
+Z76 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl|
+Z77 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/sign_extend7.vhdl|
+!i113 1
+R11
+R12
+Aextend7
+R2
+R3
+DEx4 work 12 sign_extend7 0 22 zMLfzOo3_gKLFC7Bn@62K3
+!i122 2
+l11
+R47
+VH7Q^9lK]W@3`eEeJ>o55T3
+!s100 0bHKAnn[i:oPM?R0PWgZ`2
+R6
+31
+R22
+!i10b 1
+R23
+R76
+R77
+!i113 1
+R11
+R12
+Etestbench
+Z78 w1650032883
+R3
+R2
+!i122 13
+R0
+Z79 8C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl
+Z80 FC:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl
+l0
+L7 1
+V]iKK_Z9L:G9B:i8c]3eFH0
+!s100 bWf8kl8zb90X@P1m>V^K20
+R6
+31
+Z81 !s110 1650038458
+!i10b 1
+Z82 !s108 1650038458.000000
+Z83 !s90 -reportprogress|300|-93|-work|work|C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl|
+!s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl|
+!i113 1
+R11
+R12
+Abehave
+R3
+R2
+DEx4 work 9 testbench 0 22 ]iKK_Z9L:G9B:i8c]3eFH0
+!i122 13
+l69
+L9 132
+V^e[SP>=4F8SMWJl5n9K1V0
+!s100 LBeA0B1SFNO@AQ<]kX[>G0
+R6
+31
+R81
+!i10b 1
+R82
+R83
+Z84 !s107 C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC/Testbench.vhdl|
+!i113 1
+R11
+R12
