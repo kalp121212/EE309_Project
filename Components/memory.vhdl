@@ -30,7 +30,7 @@ signal mem : memory_array := (others => X"0000");
 begin
     memory_mod: process(clk, write_enable ,Din ,addr , mem)
     begin
-        if (clk'event and clk = '1') then  --rising edge
+        if (clk'event and clk = '0') then  --falling edge edge
             if (write_enable = '1') then
                 mem(to_integer(unsigned(addr))) <= Din;
             end if;
