@@ -7,16 +7,12 @@ end entity;
 
 architecture DutWrap of DUT is
 	component iitb_risc is
-		port(rst_main, clk_main : in std_logic;
-			  output_dummy : out std_logic
-		);
+		port(reset_main, clock_main : in std_logic);
 	end component;
 begin
    add_instance: iitb_risc
 		port map(
-			rst_main => input_vector(1),
-			clk_main => input_vector(0),
-			output_dummy => output_vector(0)
+			reset_main => input_vector(1),
+			clock_main => input_vector(0)
 		);
-
 end DutWrap;
