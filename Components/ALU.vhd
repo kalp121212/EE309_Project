@@ -11,6 +11,7 @@ entity ALU is
         B: in std_logic_vector(operand_width-1 downto 0);
 		Cin: in std_logic;
         sel: in std_logic_vector(sel_line-1 downto 0);
+		EN: in std_logic;
         op: out std_logic_vector(operand_width-1 downto 0);
 		  Cout: out std_logic;
 		  Z: out std_logic
@@ -22,7 +23,7 @@ architecture a1 of ALU is
 	signal outSum: std_logic_vector(15 downto 0):= "0000000000000000";
 	signal outNAND: std_logic_vector(15 downto 0):= "0000000000000000";
 	begin
-	alu : process( A, B, sel )
+	alu : process( A, B, sel, Cin, EN)
 	begin
 		C_init <= Cin;
 		if sel="0" then
@@ -30,7 +31,9 @@ architecture a1 of ALU is
 				outSum(i)<= A(i) XOR B(i) XOR C_init;
 				C_init<= ( A(i) AND B(i) ) OR (C_init AND (A(i) XOR B(i)));
 			end loop;
-		 	Cout <= C_init;
+		 	if(EN = '1') then
+				Cout <= C_init;
+			end if;
 		 	op<= outSum;
 		 	if (outSum = "0000000000000000" and C_init = '0') then
 				Z <= '0';
@@ -43,10 +46,10 @@ architecture a1 of ALU is
 			end loop;
 			op <= outNAND;
 			if (outNAND = "0000000000000000") then
-				Z <= '0';
-		 	else 
 				Z <= '1';
+		 	else 
+				Z <= '0';
 			end if;
 		end if;
-	end process ; -- alu
-end a1 ; -- a1
+	end process ;
+end a1 ;
