@@ -36,9 +36,9 @@ architecture a1 of ALU is
 			end if;
 		 	op<= outSum;
 		 	if (outSum = "0000000000000000" and C_init = '0') then
-				Z <= '0';
-		 	else 
 				Z <= '1';
+		 	else 
+				Z <= '0';
 			end if;
 		else
 			NandOp: for i in 0 to 15 loop
