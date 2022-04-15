@@ -21,7 +21,7 @@ architecture arch of datapath is
 			A, B : in std_logic_vector(15 downto 0);
 			Cin, sel, EN : in std_logic;
 			op : out std_logic_vector(15 downto 0);
-			Cout, Z : out std_logic;
+			Cout, Z : out std_logic
 		);
 	end component;
 	
@@ -67,7 +67,7 @@ architecture arch of datapath is
 			A1, A2, A3 : in std_logic_vector(2 downto 0);
 			D3 : in std_logic_vector(15 downto 0);
 			write_enable, read_enable, reset, clk : in std_logic;
-			D1, D2, R7_PC : out std_logic_vector(15 downto 0);
+			D1, D2, R7_PC : out std_logic_vector(15 downto 0)
 		);
 	end component;
 	
@@ -114,7 +114,7 @@ begin
 	sign_extend_7 : sign_extend7 port map(input => irout(8 downto 0), output => se7);
 	
 	
-	process(state):
+	process(state)
 	begin	
 		case state is 
 			when "00001" => 
@@ -146,6 +146,7 @@ begin
 			when "00110" =>
 				if(irout(15 downto 12) = "0000") then aluA <= t1;
 				else aluA <= t2;
+				end if;
 				aluB <= se10;
 				aluOp <= '0';
 				wr_en <= "00000101";
