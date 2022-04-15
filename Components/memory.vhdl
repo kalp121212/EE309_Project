@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity memory is
     port(
         --clock
-        clk :in std_logic_1164;
+        clk : in std_logic;
 
         --write enable bit
         write_enable : in std_logic;
@@ -13,35 +13,37 @@ entity memory is
         reset : in std_logic;
 
         --16 bit address
-        addr : in std_logic_vector(15 downto 0);
+        mem_A : in std_logic_vector(15 downto 0);
 
         --data input to the memory
-        Din : in std_logic_vector(15 downto 0);
+        mem_Din : in std_logic_vector(15 downto 0);
 
         --data output from the memory
-        Dout : out std_logic_vector(15 downto 0));
+        mem_Dout : out std_logic_vector(15 downto 0));
     
 end entity;
 
 architecture memory_a of memory is
 type memory_array is array( 0 to 127 ) of std_logic_vector(15 downto 0);
-signal mem : memory_array := (others => X"0000");
+signal data : memory_array := (others => X"0000");
 
 begin
-    memory_mod: process(clk, write_enable ,Din ,addr , mem)
+    memory_mod: process(clk)
     begin
         if (clk'event and clk = '0') then  --falling edge edge
             if (write_enable = '1') then
-                mem(to_integer(unsigned(addr))) <= Din;
+                data(to_integer(unsigned(mem_A))) <= mem_Din;
             end if;
         end if;
-            Dout <= mem(to_integer(unsigned(addr)));
     end process memory_mod;
+            
+    mem_Dout <= data(to_integer(unsigned(mem_A)));
 
-    Reset: process(reset)
+    Reset_data: process(reset)
     begin
         if( reset='1') then
-           mem <= (others => X"0000");
+            data <= (others => X"0000");
+            --Fill required instructions here when run
         end if;
-    end process Reset;
+    end process Reset_data;
 end architecture memory_a;
