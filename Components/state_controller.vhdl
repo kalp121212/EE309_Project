@@ -9,7 +9,7 @@ entity controller is
 		condition : in std_logic_vector(1 downto 0);
 		
 		stateID : out std_logic_vector(4 downto 0)
-	)
+	);
 end entity;
 
 architecture fsm of controller is
