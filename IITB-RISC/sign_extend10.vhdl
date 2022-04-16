@@ -11,6 +11,6 @@ architecture extend10 of sign_extend10 is
 begin
 	
 	output(5 downto 0) <= input;
-	output(15 downto 6) <= "0000000000" when input(5) = '1' else "1111111111";
+	output(15 downto 6) <= "0000000000" when input(5) = '0' else "1111111111";
 	
 end architecture;

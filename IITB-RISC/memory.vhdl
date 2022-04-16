@@ -25,29 +25,23 @@ entity memory is
 end entity;
 
 architecture memory_a of memory is
-type memory_array is array( 0 to 127 ) of std_logic_vector(15 downto 0);
-signal data : memory_array := (0 => "0011001001011010", 1 => "1111000000000000", others => (others => '0'));
+type memory_array is array( 0 to 65535 ) of std_logic_vector(15 downto 0);
+signal data : memory_array := (0 => "0000001000000000", 1 => "0010000111001001", others => (others => '1')); --Load with Program
 
 begin
     memory_mod: process(clk)
     begin
-		  --if(reset = '1') then data <= (others => X"0000");
-        if (clk'event and clk = '0') then  --falling edge edge
+
+        if (clk'event and clk = '0') then  
             if (write_enable = '1') then
-                data(to_integer(unsigned(mem_A(6 downto 0)))) <= mem_Din;
+                data(to_integer(unsigned(mem_A))) <= mem_Din;
             end if;
         end if;
     end process memory_mod;
             
-    mem_Dout <= data(to_integer(unsigned(mem_A(6 downto 0))));
+    mem_Dout <= data(to_integer(unsigned(mem_A)));
 
 	 
-    --Reset_data: process(reset)
-    --begin
-    --    if( reset='1') then
-    --        data <= (others => X"0000");
-    --        --Fill required instructions here when run
-    --    end if;
-    --end process Reset_data;
+
 	 
 end architecture memory_a;

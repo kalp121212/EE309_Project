@@ -13,7 +13,7 @@ architecture Behave of Testbench is
   --  DUT.
   ----------------------------------------------------------------
   constant number_of_inputs  : integer := 2;  -- # input bits to your design.
-  constant number_of_outputs : integer := 0;  -- # output bits from your design.
+  constant number_of_outputs : integer := 1;  -- # output bits from your design.
   ----------------------------------------------------------------
   ----------------------------------------------------------------
 
@@ -107,7 +107,7 @@ begin
           input_vector <= to_std_logic_vector(input_vector_var);
 
 	  -- wait for the circuit to settle 
-	  wait for 50 ns;
+	  wait for 150 ns;
 
 	  -- check output.
           output_comp_var := (to_std_logic_vector(output_mask_var) and 

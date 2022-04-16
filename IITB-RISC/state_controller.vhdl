@@ -1,3 +1,11 @@
+------ IITB-RISC
+------ TEAM MEMBERS:
+------ AAYUSH RAJESH  (200070001)
+------ KALP VYAS      (200070030)
+------ PULKIT PALIWAL (20D100021)
+------ SIDHANT BOSE   (200020140)
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -24,7 +32,7 @@ begin
 		if(clk='0' and clk' event) then
 			if(rst='1') then
 				scurr <= s1; 
-			else
+			else 
 				scurr <= snext;
 			end if;
 		end if;
@@ -32,36 +40,34 @@ begin
 	
 	transition : process(opcode, scurr, C, Z, eq, condition)
 	begin
+		if(rst = '0') then
 		case scurr is
 			when s0 =>
 				stateID <= "00000";
 				snext <= s0;
 			when s1 =>  
 				stateID <= "00001";
+				snext <= s2;
+			when s2 => 
+				stateID <= "00010";
 				if(opcode = "0001" or opcode = "0010") then
-					if(condition = "00" or condition = "11") then snext <= s2;
-					elsif(condition = "10" and C = '1') then snext <= s2;
-					elsif(condition = "01" and Z = '1') then snext <= s2;
+					if(condition = "00" or condition = "11") then snext <= s3;
+					elsif(condition = "10" and C = '1') then snext <= s3;
+					elsif(condition = "01" and Z = '1') then snext <= s3;
 					else snext <= s5;
 					end if;
 				elsif(opcode = "0011") then snext <= s8;
 				elsif(opcode = "1001") then snext <= s13;
 				elsif(opcode = "1010") then snext <= s14;
 				elsif(opcode = "1111") then snext <= s0;
-				else snext <= s2;
-				end if;
-			when s2 => 
-				stateID <= "00010";
-				if opcode = "1000" then 
+				elsif opcode = "1000" then 
 					if(eq = '1') then snext <= s12;
 					else snext <= s5;
-					end if;
-				else 
-					if(opcode = "1011") then snext <= s15;
-					elsif(opcode = "1100") then snext <= s16;
-					elsif(opcode = "1101") then snext <= s24;
-					else snext <= s6;
-					end if;
+					end if; 
+				elsif(opcode = "1011") then snext <= s15;
+				elsif(opcode = "1100") then snext <= s16;
+				elsif(opcode = "1101") then snext <= s24;
+				else snext <= s6;
 				end if;
 			when s3 =>
 				stateID <= "00011";
@@ -79,7 +85,6 @@ begin
 				elsif(opcode = "0101") then
 					snext <= s9;
 				else snext <= s10;
-				--snext <= s9 when opcode = "0101" else s10;
 				end if;
 			when s7 =>
 				stateID <= "00111";
@@ -157,5 +162,6 @@ begin
 				stateID <= "11111";
 				snext <= s5;
 		end case;
+		end if;
 	end process;
 end architecture;

@@ -1,3 +1,11 @@
+------ IITB-RISC
+------ TEAM MEMBERS:
+------ AAYUSH RAJESH  (200070001)
+------ KALP VYAS      (200070030)
+------ PULKIT PALIWAL (20D100021)
+------ SIDHANT BOSE   (200020140)
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -98,7 +106,7 @@ begin
 	tsum : register_component port map (r_in => aluO, write_enable => wr_en(2), reset => rst, clk => clk, r_out => tsumout);
 	ir : register_component port map (r_in => memDo, write_enable => wr_en(1), reset => rst, clk => clk, r_out => irout);
 	--ALU
-	alu_instance : alu port map(A => aluA, B => aluB, Cin => aluCi, sel => aluOp, EN => wr_en(0), op => aluO, Cout => aluCo, Z => aluZ);
+	alu_instance : alu port map(A => aluA, B => aluB, Cin => '0', sel => aluOp, EN => wr_en(0), op => aluO, Cout => aluCo, Z => aluZ);
 	--Comparator
 	comp : comparator port map(input1 => rd1, input2 => rd2, status => comp_eq);
 	--Shifter
@@ -114,17 +122,21 @@ begin
 	sign_extend_7 : sign_extend7 port map(input => irout(8 downto 0), output => se7);
 	
 	
-	process(state)
+	process(state, aluO, rd1, rd2)
 	begin	
 		case state is 
 			when "00001" => 
 				memAddr <= r7out;
 				aluA <= r7out;
 				aluB <= "0000000000000001";
+				aluCi <= '0';
+				aluOp <= '0';
 				t3in <= aluO;
+				rfread <= '0';
 				wr_en <= "00001010";
 			when "00010" =>
 				ra1 <= irout(11 downto 9);
+				rfread <= '1';
 				t1in <= rd1;
 				wr_en <= "00110000";
 			when "00011" =>
@@ -132,87 +144,107 @@ begin
 				if(aluCo = '0') then aluCi <= '0';
 				else aluCi <= '1';
 				end if;
-				--aluCi <= '0' when aluCo = '0' else '1';
 				if (irout(1 downto 0) = "11") then aluB <= lso;
 				else aluB <= t2out;
 				end if;
 				wr_en <= "00000101";
+				rfread <= '0';
 				aluOp <= irout(13);
 			when "00100" =>
 				ra3 <= irout(5 downto 3);
 				rd3 <= tsumout;
+				rfread <= '0';
 				wr_en <= "10000000"; 
 			when "00101" =>
 				ra3 <= "111";
 				rd3 <= t3out;
+				rfread <= '0';
 				wr_en <= "10000000"; 
 			when "00110" =>
 				if(irout(15 downto 12) = "0000") then aluA <= t1out;
 				else aluA <= t2out;
 				end if;
 				aluB <= se10;
+				aluCi <= '0';
 				aluOp <= '0';
+				rfread <= '0';
 				wr_en <= "00000101";
 			when "00111" =>
 				ra3 <= irout(8 downto 6);
 				rd3 <= tsumout;
+				rfread <= '0';
 				wr_en <= "10000000";
 			when "01000" =>
 				rd3 <= pado;
 				ra3 <= irout(11 downto 9);
+				rfread <= '0';
 				wr_en <= "10000000";
 			when "01001" =>
 				memAddr <= tsumout;
 				memDi <= t1out;
+				rfread <= '0';
 				wr_en <= "01000000";
 			when "01010" =>
 				memAddr <= tsumout;
 				t1in <= memDo;
+				rfread <= '0';
 				wr_en <= "00100000";
 			when "01011" =>
 				rd3 <= t1out;
 				aluA <= t1out;
 				ra3 <= irout(11 downto 9);
+				aluCi <= '0';
 				aluOp <= '0';
 				aluB <= "0000000000000000";
-				wr_en <= "10000001";
+				rfread <= '0';
+				wr_en <= "10000000"; 
 			when "01100" =>
 				aluA <= r7out;
 				aluB <= se10;
 				aluOp <= '0';
+				aluCi <= '0';
 				t3in <= aluO;
-				wr_en <= "00001000";
+				rfread <= '0';
+				wr_en <= "00001000"; 
 			when "01101" =>
 				aluA <= r7out;
 				aluB <= se7;
 				t3in <= aluO;
 				aluOp <= '0';
+				aluCi <= '0';
+				rfread <= '0';
 				rd3 <= t3out;
 				ra3 <= irout(11 downto 9);
-				wr_en <= "10001000";
+				wr_en <= "10001000"; 
 			when "01110" =>
 				rd3 <= t3out;
 				ra3 <= irout(11 downto 9);
 				t3in <= rd2;
+				rfread <= '1';
 				wr_en <= "10001000";
 			when "01111" =>
 				aluA <= t1out;
 				aluB <= se7;
 				t3in <= aluO;
 				aluOp <= '0';
-				wr_en <= "00001000";
+				aluCi <= '0';
+				rfread <= '0';
+				wr_en <= "00001000"; 
 			when "10000" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(0) = '1') then 
-					ra3 <= "000"; rd3 <= memDo; wr_en <= "10100000";
-				else wr_en <= "00100000";
+					ra3 <= "000"; rd3 <= memDo; wr_en <= "10100000"; 
+				else wr_en <= "00100000"; 
 				end if;
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10001" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(1) = '1') then 
 					ra3 <= "001"; rd3 <= memDo; wr_en <= "10100000";
 				else wr_en <= "00100000";
@@ -220,19 +252,23 @@ begin
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10010" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(2) = '1') then 
 					ra3 <= "010"; rd3 <= memDo; wr_en <= "10100000";
-				else wr_en <= "00100000";
+				else wr_en <= "00100000"; 
 				end if;
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10011" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(3) = '1') then 
 					ra3 <= "011"; rd3 <= memDo; wr_en <= "10100000";
 				else wr_en <= "00100000";
@@ -240,9 +276,11 @@ begin
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10100" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(4) = '1') then 
 					ra3 <= "100"; rd3 <= memDo; wr_en <= "10100000";
 				else wr_en <= "00100000";
@@ -250,19 +288,23 @@ begin
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10101" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(5) = '1') then 
 					ra3 <= "101"; rd3 <= memDo; wr_en <= "10100000";
-				else wr_en <= "00100000";
+				else wr_en <= "00100000"; 
 				end if;
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10110" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(6) = '1') then 
 					ra3 <= "110"; rd3 <= memDo; wr_en <= "10100000";
 				else wr_en <= "00100000";
@@ -270,9 +312,11 @@ begin
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "10111" =>
 				memAddr <= t1out;
+				rfread <= '0';
 				if(irout(7) = '1') then 
 					ra3 <= "111"; rd3 <= memDo; wr_en <= "10100000";
 				else wr_en <= "00100000";
@@ -280,89 +324,98 @@ begin
 				aluA <= t1out;  
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11000" =>
 				memAddr <= t1out;
 				if(irout(0) = '1') then	
-					ra1 <= "000"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "000"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11001" =>
 				memAddr <= t1out;
 				if(irout(1) = '1') then	
-					ra1 <= "001"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "001"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11010" =>
 				memAddr <= t1out;
 				if(irout(2) = '1') then	
-					ra1 <= "010"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "010"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11011" =>
 				memAddr <= t1out;
 				if(irout(3) = '1') then	
-					ra1 <= "011"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "011"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11100" =>
 				memAddr <= t1out;
 				if(irout(4) = '1') then	
-					ra1 <= "100"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "100"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11101" =>
 				memAddr <= t1out;
 				if(irout(5) = '1') then	
-					ra1 <= "101"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "101"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11110" =>
 				memAddr <= t1out;
 				if(irout(6) = '1') then	
-					ra1 <= "110"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "110"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when "11111" =>
 				memAddr <= t1out;
 				if(irout(7) = '1') then	
-					ra1 <= "000"; memDi <= rd1; wr_en <= "01100000";
-				else wr_en <= "00100000";
+					ra1 <= "111"; memDi <= rd1; wr_en <= "01100000"; rfread <= '1';
+				else wr_en <= "00100000"; rfread <= '0';
 				end if;
 				aluA <= t1out;
 				aluB <= "0000000000000001";
 				aluOp <= '0';
+				aluCi <= '0';
 				t1in <= aluO;
 			when others =>
-				wr_en <= "00000000";
+				wr_en <= "00000000"; rfread <= '0';
 		end case;
 	end process;
 	

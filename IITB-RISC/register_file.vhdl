@@ -36,6 +36,8 @@ architecture rf of register_file is
     signal R5 : std_logic_vector(15 downto 0);
     signal R6 : std_logic_vector(15 downto 0);
     signal R7 : std_logic_vector(15 downto 0);
+	 signal D1_temp : std_logic_vector(15 downto 0);
+    signal D2_temp : std_logic_vector(15 downto 0);
 begin
     --writing to register when write_enable is set
     write_proc: process(A3,write_enable,clk,reset)
@@ -78,81 +80,70 @@ begin
             end if;
         end if;
     end process write_proc;
+	 
+	 D1 <= D1_temp when read_enable = '1';
+	 D2 <= D2_temp when read_enable = '1';
 
     --reading from the registers
-    read_proc: process(A1,A2)
-    variable D1_temp : std_logic_vector(15 downto 0);
-    variable D2_temp : std_logic_vector(15 downto 0);
+    read_proc: process(A1,A2,read_enable)
+
 
     begin
         if(read_enable = '1') then
             if(A1 = "000") then
-                D1_temp := R0;
+                D1_temp <= R0;
             end if;
             if(A1 = "001") then
-                D1_temp := R1;
+                D1_temp <= R1;
             end if;
             if(A1 = "010") then
-                D1_temp := R2;
+                D1_temp <= R2;
             end if;
             if(A1 = "011") then
-                D1_temp := R3;
+                D1_temp <= R3;
             end if;
             if(A1 = "100") then
-                D1_temp := R4;
+                D1_temp <= R4;
             end if;
             if(A1 = "101") then
-                D1_temp := R5;
+                D1_temp <= R5;
             end if;
             if(A1 = "110") then
-                D1_temp := R6;
+                D1_temp <= R6;
             end if;
             if(A1 = "111") then
-                D1_temp := R7;
+                D1_temp <= R7;
             end if;
             --Address 2
             if(A2 = "000") then
-                D2_temp := R0;
+                D2_temp <= R0;
             end if;
             if(A2 = "001") then
-                D2_temp := R1;
+                D2_temp <= R1;
             end if;
             if(A2 = "010") then
-                D2_temp := R2;
+                D2_temp <= R2;
             end if;
             if(A2 = "011") then
-                D2_temp := R3;
+                D2_temp <= R3;
             end if;
             if(A2 = "100") then
-                D2_temp := R4;
+                D2_temp <= R4;
             end if;
             if(A2 = "101") then
-                D2_temp := R5;
+                D2_temp <= R5;
             end if;
             if(A2 = "110") then
-                D2_temp := R6;
+                D2_temp <= R6;
             end if;
             if(A2 = "111") then
-                D2_temp := R7;
+                D2_temp <= R7;
             end if;    
         end if;
-        D1 <= D1_temp;
-        D2 <= D2_temp;
+        --D1 <= D1_temp;
+        --D2 <= D2_temp;
     end process read_proc;
 
-    -- reset all registers to 0
-    --Reset_proc: process(reset)
-    --begin
-    --    if(reset = '1') then 
-    --        R0 <= "0000000000000000";
-    --        R1 <= "0000000000000000";
-    --        R2 <= "0000000000000000";
-    --        R3 <= "0000000000000000";
-    --        R4 <= "0000000000000000";
-    --        R5 <= "0000000000000000";
-    --        R6 <= "0000000000000000";
-    --        R7 <= "0000000000000000";
-    --    end if;
-    --end process Reset_proc;
+    
 R7_PC <= R7;
 end rf;

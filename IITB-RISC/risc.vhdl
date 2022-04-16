@@ -1,10 +1,19 @@
+------ IITB-RISC
+------ TEAM MEMBERS:
+------ AAYUSH RAJESH  (200070001)
+------ KALP VYAS      (200070030)
+------ PULKIT PALIWAL (20D100021)
+------ SIDHANT BOSE   (200020140)
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity iitb_risc is
 	port(
-		clk_main, rst_main : in std_logic
+		clk_main, rst_main : in std_logic;
+		output_dummy : out std_logic
 	);
 end entity;
 
@@ -39,7 +48,8 @@ begin
 	
 	cotroller_main : controller port map(C => C_sig, Z => Z_sig, eq => eq_sig, clk => clk_main, rst => rst_main, opcode => opcode_signal, condition => cond_signal, stateID => state_signal);
 	datapath_main : datapath port map(state => state_signal, clk => clk_main, rst => rst_main, opcode => opcode_signal, condition => cond_signal, C => C_sig, Z => Z_sig, eq => eq_sig);
-
+	output_dummy <= '1';
+	
 end architecture;
 	
 	
