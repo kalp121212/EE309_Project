@@ -12,7 +12,7 @@ entity execute is
         ra,rb : in std_logic_vector(15 downto 0);
         cond_in : in std_logic_vector(1 downto 0);
         rc_in : in std_logic_vector(2 downto 0);
-        carry_in : in std_logic;
+   --     carry_in : in std_logic;
 
         opcode_out : out std_logic_vector(3 downto 0);
         rc_out : out std_logic_vector(2 downto 0);
@@ -56,7 +56,7 @@ begin
     opcode_in <= opcode_out;
     cond_in <= cond_out;
     ra_out <= ra;
-    alu_use : alu port map(A => alu_in1, B => aluin_2, Cin => carry_in, sel => alu_select, EN => enable, op => alu_out, Cout => carry_out, Z => Z_out);
+    alu_use : alu port map(A => alu_in1, B => aluin_2, Cin => '0', sel => alu_select, EN => enable, op => alu_out, Cout => carry_out, Z => Z_out);
     comp_use : comparator port map(input1 => alu_in1, input2 => alu_in2, status => eq_out);
 
     alu_process: process(opcode_in,clk,reset,stall)
