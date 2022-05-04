@@ -16,7 +16,7 @@ entity EX_MA_reg is
 
         pc_out : out std_logic_vector(15 downto 0);
         alu_out : out std_logic_vector(15 downto 0);
-        opcode_in : out std_logic_vector(3 downto 0);
+        opcode_out : out std_logic_vector(3 downto 0);
         carry_out, z_out, eq_out : out std_logic;
         reg_out : out std_logic_vector(2 downto 0);
         ra_out : out std_logic_vector(15 downto 0);
