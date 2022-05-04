@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity write_back is 
     port(
         clk, reset, stall : in std_logic;
-        opcode_in: in std_logic_vector(15 downto 0);
+        opcode_in: in std_logic_vector(3 downto 0);
         pc_in : in std_logic_vector(15 down to 0);
         reg_in : in std_logic_vector(2 downto 0);
         alu_out : in std_logic_vector(15 downto 0);
