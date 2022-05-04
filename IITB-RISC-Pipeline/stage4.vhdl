@@ -15,9 +15,9 @@ entity execute is
         carry_in : in std_logic;
 
         opcode_out : out std_logic_vector(3 downto 0);
-        rc_out : in std_logic_vector(2 downto 0);
-        cond_out : in std_logic_vector(1 downto 0);
-        alu_out : in std_logic_vector(15 downto 0);
+        rc_out : out std_logic_vector(2 downto 0);
+        cond_out : out std_logic_vector(1 downto 0);
+        alu_out : out std_logic_vector(15 downto 0);
         Z_out,carry_out,eq_out : out std_logic;
         ra_out : out std_logic_vector(15 downto 0);
 		pc_out : out std_logic_vector(15 downto 0)
