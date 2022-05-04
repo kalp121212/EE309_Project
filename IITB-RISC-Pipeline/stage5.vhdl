@@ -56,7 +56,7 @@ begin
     cond_out <= cond_in;
 
     memory_access: code_memory port map(mem_A => mem_code, mem_Dout => next_instr);
-    data_memory_access : data_memory port map(clk => clk, write_enable =>enable,reset +> reset, mem_A => mem_data,mem_Din => data,mem_Dout => d_out);
+    data_memory_access : data_memory port map(clk => clk, write_enable =>enable,reset => reset, mem_A => mem_data,mem_Din => data,mem_Dout => d_out);
 
     branches: process(clk,reset,stall)
 
