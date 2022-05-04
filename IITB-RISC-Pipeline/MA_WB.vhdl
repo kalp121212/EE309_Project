@@ -14,7 +14,7 @@ entity MA_WB_reg is
         cond_in : in std_logic_vector(1 downto 0);
         pc_in : in std_logic_vector(15 downto 0)
 
-        opcode_out: out std_logic_vector(15 downto 0);
+        opcode_out: out std_logic_vector(3 downto 0);
         pc_out : out std_logic_vector(15 down to 0);
         reg_out : out std_logic_vector(2 downto 0);
         alu_out : out std_logic_vector(15 downto 0);
