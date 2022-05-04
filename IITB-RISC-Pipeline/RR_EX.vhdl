@@ -20,7 +20,7 @@ entity RR_EX_reg is
         ra,rb : out std_logic_vector(15 downto 0);
         cond_out : out std_logic_vector(1 downto 0);
         rc_out : out std_logic_vector(2 downto 0);
-        carry_out : out std_logic
+        --carry_out : out std_logic
 	);
 end entity;
 
