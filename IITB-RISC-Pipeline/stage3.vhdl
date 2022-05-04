@@ -11,12 +11,13 @@ entity reg_read is
 		imm6_in : in std_logic_vector(15 downto 0);
 		imm9_in : in std_logic_vector(15 downto 0);
 		pc_in, ra_val_in, rb_val_in : in std_logic_vector(15 downto 0);
+
 		opcode_out : out std_logic_vector(3 downto 0);
-		ra_out, rb_out, rc_out : out std_logic_vector(2 downto 0);
+		rc_out : out std_logic_vector(2 downto 0);
 		cond_out : out std_logic_vector(1 downto 0);
 		imm6_out : out std_logic_vector(15 downto 0);
 		imm9_out : out std_logic_vector(15 downto 0);
-		pc_out, ra_val_in, rb_val_in: out std_logic_vector(15 downto 0)
+		pc_out, ra_val_out, rb_val_out: out std_logic_vector(15 downto 0)
 	);
 end entity;
 
@@ -36,9 +37,8 @@ begin
 	lshift : left_shift port map(input => rb_val_in, output => rb_lshift);
 	
 	opcode_out <= opcode_in;
-	ra_out <= ra_in;
-	rb_out <= rb_in;
-	rc_out <= rc_in;
+	rc_out <= rc_in when opcode_in = "0001" or opcode_in = "0010" else
+				rb_in when opcode_in = "0000" else ra_in ;
 	cond_out <= cond_in;
 	imm6_out <= imm6_in;
 	imm9_out <= imm9_in;

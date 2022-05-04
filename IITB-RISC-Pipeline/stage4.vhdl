@@ -9,7 +9,7 @@ entity execute is
         imm6_in : in std_logic_vector(15 downto 0);
         imm9_in : in std_logic_vector(15 downto 0);
         opcode_in : in std_logic_vector(3 downto 0);
-        ra,rb,rb_left_shift : in std_logic_vector(15 downto 0);
+        ra,rb : in std_logic_vector(15 downto 0);
         cond_in : in std_logic_vector(1 downto 0);
         rc_in : in std_logic_vector(2 downto 0);
         carry_in : in std_logic;
@@ -66,11 +66,7 @@ begin
                 alu_select <= '0';
                 alu_in1 <= ra;
                 enable <= '1';
-                if(cond_in = "11") then
-                    alu_in2 <= rb_left_shift;
-                else
-                    alu_in2 <= rb;
-                end if;
+                alu_in2 <= rb;
             elsif(opcode_in = "0000") then
                 alu_select <= '0';
                 alu_in1 <= ra;
@@ -102,15 +98,15 @@ begin
                 alu_in2 <= imm9_in;
                 enable <= '0';
             elsif(opcode_in = "1010") then
-                    alu_select <= '1';
-                    alu_in1 <= rb;
-                    alu_in2 <= "0000000000000000";
-                    enable <= '0';
+                alu_select <= '1';
+                alu_in1 <= rb;
+                alu_in2 <= "0000000000000000";
+                enable <= '0';
             elsif(opcode_in = "1011") then
-                    alu_select <= '1';
-                    alu_in1 <= ra;
-                    alu_in2 <= imm9_in;
-                    enable <= '0';
+                alu_select <= '1';
+                alu_in1 <= ra;
+                alu_in2 <= imm9_in;
+                enable <= '0';
             end if;
         end if;
 

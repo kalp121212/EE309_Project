@@ -16,8 +16,8 @@ entity memory_access is
         alu_out : out std_logic_vector(15 downto 0);
         opcode_out : out std_logic_vector(3 downto 0);
         reg_out : out std_logic_vector(2 downto 0);
-        carry_out,z_in,eq_in : out std_logic;
-        next_instr : out std_logic_vector(15 downto 0);
+        carry_out,z_out: out std_logic;
+       -- next_instr : out std_logic_vector(15 downto 0);
         cond_out : out std_logic_vector(1 downto 0);
         pc_out : out std_logic_vector(15 downto 0)
     );
@@ -44,14 +44,13 @@ architecture ma_arch of memory_access is
 		);
 	end component;
 
-    signal mem_code,mem_data,d_out ,data: std_logic_vector(15 downto 0);
+    signal mem_code,mem_data,d_out ,data,next_instr: std_logic_vector(15 downto 0);
 
 begin
     opcode_out <= opcode_in;
     pc_out <= pc_in;
     carry_out <= carry_in;
     z_out <= z_in;
-    eq_out <= eq_in;
     reg_out <= reg_in;
     alu_out <= alu_out_in;
     cond_out <= cond_in;
