@@ -6,13 +6,13 @@ entity DUT is
 end entity;
 
 architecture DutWrap of DUT is
-	component iitb_risc is
+	component pipeline is
 		port(rst_main, clk_main : in std_logic;
 			  output_dummy : out std_logic
 		);
 	end component;
 begin
-   add_instance: iitb_risc
+   add_instance: pipeline
 		port map(
 			rst_main => input_vector(1),
 			clk_main => input_vector(0),
