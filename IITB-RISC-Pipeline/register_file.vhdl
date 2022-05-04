@@ -10,8 +10,10 @@ entity register_file is
 
         -- input data
         D3 : in std_logic_vector(15 downto 0);
+	PC : in std_logic_vector(15 downto 0);
 
         write_enable : in std_logic;
+	write_pc : in std_logic;
         read_enable : in std_logic;
 
         reset : in std_logic;
@@ -40,7 +42,7 @@ architecture rf of register_file is
     signal D2_temp : std_logic_vector(15 downto 0);
 begin
     --writing to register when write_enable is set
-    write_proc: process(A3,write_enable,clk,reset)
+    write_proc: process(A3,write_enable,write_pc,clk,reset)
     begin
 	     if(reset = '1') then 
             R0 <= "0000000000000000";
@@ -78,6 +80,9 @@ begin
                     R7 <= D3;
                 end if;
             end if;
+	    if (write_pc = '1') then
+            	R7 <= PC;
+	    end if;
         end if;
     end process write_proc;
 	 
