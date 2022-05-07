@@ -4,13 +4,13 @@ use ieee.numeric_std.all;
 
 entity reg_read is
 	port(
-		clk, reset, stall, fwd_en1, fwd_en2 : in std_logic;
+		clk, reset, stall : in std_logic;
 		opcode_in : in std_logic_vector(3 downto 0);
 		ra_in, rb_in, rc_in : in std_logic_vector(2 downto 0);
 		cond_in : in std_logic_vector(1 downto 0);
 		imm6_in : in std_logic_vector(15 downto 0);
 		imm9_in : in std_logic_vector(15 downto 0);
-		pc_in, ra_val_in, rb_val_in, fwd_val1, fwd_val2 : in std_logic_vector(15 downto 0);
+		pc_in, ra_val_in, rb_val_in : in std_logic_vector(15 downto 0);
 
 		opcode_out : out std_logic_vector(3 downto 0);
 		rc_out : out std_logic_vector(2 downto 0);
@@ -21,7 +21,7 @@ entity reg_read is
 	);
 end entity;
 
-architecture rr_arch of reg_read is
+architecture rr_arch is
 
 	component left_shift is
 		port(
@@ -43,10 +43,7 @@ begin
 	imm6_out <= imm6_in;
 	imm9_out <= imm9_in;
 	pc_out <= pc_in;
-	ra_val_out <= fwd_val1 when fwd_en1 = '1' else 
-				  ra_val_in;
-	rb_val_out <= fwd_val2 when fwd_en2 = '1' else 
-				  rb_lshift when cond_in = "11" else 
-				  rb_val_in;
+	ra_val_out <= ra_val_in;
+	rb_val_out <= rb_lshift when cond_in = "11" else rb_val_in;
 	
 end architecture;

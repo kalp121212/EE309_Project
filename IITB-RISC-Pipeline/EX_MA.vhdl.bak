@@ -4,9 +4,9 @@ use ieee.numeric_std.all;
 
 entity EX_MA_reg is
     port(
-        clk, reset, write_enable : in std_logic;
+        clk, reset, write_enable : std_logic;
 
-        opcode_in : in std_logic_vector(3 downto 0);
+        opcode_in : out std_logic_vector(3 downto 0);
         rc_in : in std_logic_vector(2 downto 0);
         cond_in : in std_logic_vector(1 downto 0);
         alu_out_in : in std_logic_vector(15 downto 0);
@@ -53,15 +53,15 @@ begin
 			opcode_out <= (others => '1');
 			ra_out <= (others => '1');
 			cond_out <= (others => '1');
-            alu_out <= (others => '1');
-            reg_out <= (others => '1');
-            carry_out <= '1';
-            z_out <= '1';
-            eq_out <= '1';
+            ra_val_in <= (others => '1');
+            rb_val_in <= (others => '1');
+            carry_in <= '1';
+            z_in <= '1';
+            eq_in <= '1';
         elsif (clk'event and clk = '0') then  
             pc_out <= reg_data1;
-            ra_out <= reg_data2;
-            alu_out <= reg_data3;
+            ra <= reg_data2;
+            rb <= reg_data3;
             opcode_out <= reg_data4;
             cond_out <= reg_data5;
             reg_out <= reg_data6;

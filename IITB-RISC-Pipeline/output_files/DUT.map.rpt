@@ -1,0 +1,247 @@
+Analysis & Synthesis report for DUT
+Sat May 07 17:53:00 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Sat May 07 17:53:00 2022           ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                            ; DUT                ; DUT                ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; pipeline.vhdl                    ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl ;         ;
+; DUT.vhdl                         ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl      ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat May 07 17:52:47 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-RISC_Pipeline -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file forwarding_unit.vhdl
+    Info (12022): Found design unit 1: forwarding_unit-forward File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 18
+    Info (12023): Found entity 1: forwarding_unit File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-a1 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 17
+    Info (12023): Found entity 1: ALU File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhdl
+    Info (12022): Found design unit 1: Testbench-Behave File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/Testbench.vhdl Line: 9
+    Info (12023): Found entity 1: Testbench File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/Testbench.vhdl Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file stage6.vhdl
+    Info (12022): Found design unit 1: write_back-wb_arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 21
+    Info (12023): Found entity 1: write_back File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stage5.vhdl
+    Info (12022): Found design unit 1: memory_access-ma_arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 27
+    Info (12023): Found entity 1: memory_access File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stage4.vhdl
+    Info (12022): Found design unit 1: execute-ex_arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 28
+    Info (12023): Found entity 1: execute File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stage3.vhdl
+    Info (12022): Found design unit 1: reg_read-rr_arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage3.vhdl Line: 24
+    Info (12023): Found entity 1: reg_read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage3.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stage2.vhdl
+    Info (12022): Found design unit 1: instr_decode-id_arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl Line: 18
+    Info (12023): Found entity 1: instr_decode File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stage1.vhdl
+    Info (12022): Found design unit 1: instr_fetch-if_arch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl Line: 12
+    Info (12023): Found entity 1: instr_fetch File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sign_extend7.vhdl
+    Info (12022): Found design unit 1: sign_extend7-extend7 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend7.vhdl Line: 10
+    Info (12023): Found entity 1: sign_extend7 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend7.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file rr_ex.vhdl
+    Info (12022): Found design unit 1: RR_EX_reg-reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 27
+    Info (12023): Found entity 1: RR_EX_reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhdl
+    Info (12022): Found design unit 1: code_memory-memory_a File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ROM.vhdl Line: 14
+    Info (12023): Found entity 1: code_memory File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ROM.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file risc.vhdl
+    Info (12022): Found design unit 1: iitb_risc-final File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/risc.vhdl Line: 20
+    Info (12023): Found entity 1: iitb_risc File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/risc.vhdl Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhdl
+    Info (12022): Found design unit 1: register_file-rf File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 32
+    Info (12023): Found entity 1: register_file File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhdl
+    Info (12022): Found design unit 1: data_memory-memory_a File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RAM.vhdl Line: 27
+    Info (12023): Found entity 1: data_memory File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RAM.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline.vhdl
+    Info (12022): Found design unit 1: pipeline-final File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 12
+    Info (12023): Found entity 1: pipeline File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pad7.vhdl
+    Info (12022): Found design unit 1: pad7-pad File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pad7.vhdl Line: 10
+    Info (12023): Found entity 1: pad7 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pad7.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ma_wb.vhdl
+    Info (12022): Found design unit 1: MA_WB_reg-reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 26
+    Info (12023): Found entity 1: MA_WB_reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file lshift.vhdl
+    Info (12022): Found design unit 1: left_shift-shift File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/lshift.vhdl Line: 10
+    Info (12023): Found entity 1: left_shift File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/lshift.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file if_id.vhdl
+    Info (12022): Found design unit 1: IF_ID_reg-reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 13
+    Info (12023): Found entity 1: IF_ID_reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file id_rr.vhdl
+    Info (12022): Found design unit 1: ID_RR_reg-reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 25
+    Info (12023): Found entity 1: ID_RR_reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ex_ma.vhdl
+    Info (12022): Found design unit 1: EX_MA_reg-reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 27
+    Info (12023): Found entity 1: EX_MA_reg File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dut.vhdl
+    Info (12022): Found design unit 1: DUT-DutWrap File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 8
+    Info (12023): Found entity 1: DUT File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file comp.vhdl
+    Info (12022): Found design unit 1: comparator-compare File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/comp.vhdl Line: 12
+    Info (12023): Found entity 1: comparator File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/comp.vhdl Line: 4
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "pipeline" for hierarchy "pipeline:add_instance" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 15
+Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall1" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall2" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall3" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall4" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall5" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
+Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall6" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
+Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(239): object "wb_pc" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 239
+Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(239): object "rfpc" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 239
+Error (10344): VHDL expression error at pipeline.vhdl(269): expression has 4 elements, but must have 16 elements File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 269
+Error (10346): VHDL error at pipeline.vhdl(269): formal port or parameter "opcode_in" must have actual or default value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 269
+Error (12152): Can't elaborate user hierarchy "pipeline:add_instance" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 15
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 9 warnings
+    Error: Peak virtual memory: 4762 megabytes
+    Error: Processing ended: Sat May 07 17:53:00 2022
+    Error: Elapsed time: 00:00:13
+    Error: Total CPU time (on all processors): 00:00:27
+
+

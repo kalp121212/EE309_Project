@@ -4,14 +4,14 @@ use ieee.numeric_std.all;
 
 entity RR_EX_reg is
 	port(
-		clk, reset, write_enable : in std_logic;
+		clk, reset, write_enable : std_logic;
 		----
 		opcode_in : in std_logic_vector(3 downto 0);
 	    rc_in : in std_logic_vector(2 downto 0);
 		cond_in : in std_logic_vector(1 downto 0);
 		imm6_in : in std_logic_vector(15 downto 0);
 		imm9_in : in std_logic_vector(15 downto 0);
-		pc_in, ra_val_in, rb_val_in: in std_logic_vector(15 downto 0);
+		pc_in, ra_val_in, rb_val_in: out std_logic_vector(15 downto 0)
 		----
 		pc_out : out std_logic_vector(15 downto 0);
         imm6_out : out std_logic_vector(15 downto 0);
@@ -44,19 +44,17 @@ begin
     reg_data7 <= cond_in when write_enable = '1';
     reg_data8 <= rc_in when write_enable = '1';
 
-    write_proc : process(clk,write_enable,pc_in,opcode_in,rc_in,cond_in,imm6_in,imm9_in,reset,ra_val_in,rb_val_in)
+    write_proc : process(clk,write_enable,pc_in,opcode_in,ra_in,rb_in,rc_in,cond_in,imm6_in,imm9_in,reset,ra_val_in,rb_val_in)
     begin
         if(reset = '1') then 
 			pc_out <= (others => '1');
 			opcode_out <= (others => '1');
-			ra <= (others => '1');
-			rb <= (others => '1');
-			rc_out <= (others => '1');
+			ra_out <= (others => '1');
 			cond_out <= (others => '1');
 			imm6_out <= (others => '1');
 			imm9_out <= (others => '1');
-         --ra_val_in <= (others => '1');
-         --rb_val_in <= (others => '1');
+            ra_val_in <= (others => '1');
+            rb_val_in <= (others => '1');
         elsif (clk'event and clk = '0') then  
             pc_out <= reg_data1;
             ra <= reg_data2;

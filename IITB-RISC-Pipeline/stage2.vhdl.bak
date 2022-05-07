@@ -47,7 +47,7 @@ begin
 	p7 : pad7 port map(input => instr(8 downto 0), output => p7_out);
 	
 	
-	pc_out <= pc_in;
+	pc_out <= pc_in
 	opcode <= instr(15 downto 12);
 	ra <= instr(11 downto 9);
 	rb <= instr(8 downto 6);

@@ -6,16 +6,16 @@ entity MA_WB_reg is
     port(
         clk, reset, write_enable : in std_logic;
 
+        alu_out_in : in std_logic_vector(15 downto 0);
         opcode_in : in std_logic_vector(3 downto 0);
-		  alu_out_in : in std_logic_vector(15 downto 0);
         reg_out_in : in std_logic_vector(2 downto 0);
         carry_in,z_in : in std_logic;
    --     next_instr : in std_logic_vector(15 downto 0);
         cond_in : in std_logic_vector(1 downto 0);
-        pc_in : in std_logic_vector(15 downto 0);
+        pc_in : in std_logic_vector(15 downto 0)
 
         opcode_out: out std_logic_vector(3 downto 0);
-        pc_out : out std_logic_vector(15 downto 0);
+        pc_out : out std_logic_vector(15 down to 0);
         reg_out : out std_logic_vector(2 downto 0);
         alu_out : out std_logic_vector(15 downto 0);
         Z_out,carry_out : out std_logic;
@@ -23,7 +23,7 @@ entity MA_WB_reg is
     );
 end entity;
 
-architecture reg of MA_WB_reg is
+architecture reg of EX_MA_reg is
     signal reg_data1 : std_logic_vector(15 downto 0);
     signal reg_data2 : std_logic_vector(15 downto 0);
     signal reg_data3 : std_logic_vector(3 downto 0);
@@ -35,7 +35,7 @@ architecture reg of MA_WB_reg is
 begin
     reg_data1 <= pc_in when write_enable = '1';
     reg_data2 <= alu_out_in when write_enable = '1';
-	 reg_data3 <= opcode_in when write_enable = '1';
+    reg_data3 <= opcode_in when write_enable = '1';
     reg_data4 <= cond_in when write_enable = '1';
     reg_data5 <= reg_out_in when write_enable = '1';
     reg_data6 <= carry_in when write_enable = '1';
@@ -49,8 +49,8 @@ begin
 			reg_out <= (others => '1');
 			cond_out <= (others => '1');
             alu_out <= (others => '1');
-            carry_out <= '1';
-            z_out <= '1';
+            carry_in <= '1';
+            z_in <= '1';
         elsif (clk'event and clk = '0') then  
             pc_out <= reg_data1;
             alu_out <= reg_data2;

@@ -14,6 +14,7 @@ entity execute is
         rc_in : in std_logic_vector(2 downto 0);
    --     carry_in : in std_logic;
 
+		reg_change : out std_logic;
         opcode_out : out std_logic_vector(3 downto 0);
         rc_out : out std_logic_vector(2 downto 0);
         cond_out : out std_logic_vector(1 downto 0);
@@ -53,10 +54,13 @@ architecture ex_arch of execute is
 
 begin
     pc_out <= pc_in;
-    opcode_in <= opcode_out;
-    cond_in <= cond_out;
+    opcode_out <= opcode_in;
+    cond_out <= cond_in;
     ra_out <= ra;
-    alu_use : alu port map(A => alu_in1, B => aluin_2, Cin => '0', sel => alu_select, EN => enable, op => alu_out, Cout => carry_out, Z => Z_out);
+	rc_out <= rc_in;
+	reg_change <= '1' when opcode_in(3 downto 2) /= "10" else '0';    --Instruction alters register value 
+	
+    alu_use : alu port map(A => alu_in1, B => alu_in2, Cin => '0', sel => alu_select, EN => enable, op => alu_out, Cout => carry_out, Z => Z_out);
     comp_use : comparator port map(input1 => alu_in1, input2 => alu_in2, status => eq_out);
 
     alu_process: process(opcode_in,clk,reset,stall)
@@ -82,7 +86,7 @@ begin
                 alu_in1 <= imm9_in;
                 alu_in2 <= "0000000000000000";
                 enable <= '0';
-            elsif (opcode_in = "0111" or opcode = "0101") then
+            elsif (opcode_in = "0111" or opcode_in = "0101") then
                 alu_select <= '1';
                 alu_in1 <= imm6_in;
                 alu_in2 <= rb;
