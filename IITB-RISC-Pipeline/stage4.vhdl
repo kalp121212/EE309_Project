@@ -49,7 +49,7 @@ architecture ex_arch of execute is
         );
     end component;
 
-    signal alu_in1,alu_in2: std_logic_vector(15 downto 0);
+    signal alu_in1,alu_in2: std_logic_vector(15 downto 0) := (others => '0');
     signal alu_select,enable,eq: std_logic;
 
 begin
@@ -63,9 +63,8 @@ begin
     alu_use : alu port map(A => alu_in1, B => alu_in2, Cin => '0', sel => alu_select, EN => enable, op => alu_out, Cout => carry_out, Z => Z_out);
     comp_use : comparator port map(input1 => alu_in1, input2 => alu_in2, status => eq_out);
 
-    alu_process: process(opcode_in,clk,reset,stall)
+    alu_process: process(opcode_in,pc_in,imm6_in,imm9_in,ra,rb,cond_in,rc_in)
     begin
-        if(clk'event and clk = '0' and stall = '0') then 
             if(opcode_in = "0001") then
                 alu_select <= '0';
                 alu_in1 <= ra;
@@ -80,39 +79,38 @@ begin
                 alu_select <= '1';
                 alu_in1 <= ra;
                 alu_in2 <= rb;
-                enable <= '0';
+                enable <= '1';
             elsif (opcode_in = "0011") then
-                alu_select <= '1';
+                alu_select <= '0';
                 alu_in1 <= imm9_in;
                 alu_in2 <= "0000000000000000";
                 enable <= '0';
             elsif (opcode_in = "0111" or opcode_in = "0101") then
-                alu_select <= '1';
+                alu_select <= '0';
                 alu_in1 <= imm6_in;
                 alu_in2 <= rb;
                 enable <= '0';
             elsif(opcode_in = "1000") then
-                alu_select <= '1';
+                alu_select <= '0';
                 alu_in1 <= pc_in;
                 alu_in2 <= imm6_in;
                 enable <= '0';
             elsif(opcode_in = "1001") then
-                alu_select <= '1';
+                alu_select <= '0';
                 alu_in1 <= pc_in;
                 alu_in2 <= imm9_in;
                 enable <= '0';
             elsif(opcode_in = "1010") then
-                alu_select <= '1';
+                alu_select <= '0';
                 alu_in1 <= rb;
                 alu_in2 <= "0000000000000000";
                 enable <= '0';
             elsif(opcode_in = "1011") then
-                alu_select <= '1';
+                alu_select <= '0';
                 alu_in1 <= ra;
                 alu_in2 <= imm9_in;
                 enable <= '0';
             end if;
-        end if;
 
     end process;
 

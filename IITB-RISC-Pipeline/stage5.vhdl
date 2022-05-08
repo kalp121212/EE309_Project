@@ -53,42 +53,45 @@ begin
     carry_out <= carry_in;
     z_out <= z_in;
     reg_out <= reg_in;
-    alu_out <= alu_out_in;
+    --alu_out <= alu_out_in;
+	 alu_out <= d_out when opcode_in = "0111" else alu_out_in;
     cond_out <= cond_in;
 	 reg_change <= '1' when opcode_in(3 downto 2) /= "10" else '0';    --Instruction alters register value 
+	 
+	 mem_data <= alu_out_in;
 
     memory_access: code_memory port map(mem_A => mem_code, mem_Dout => next_instr);
     data_memory_access : data_memory port map(clk => clk, write_enable =>enable,reset => reset, mem_A => mem_data,mem_Din => data,mem_Dout => d_out);
 
-    branches: process(clk,reset,stall)
+    --branches: process(clk,reset,stall)
 
-    begin
-        if(clk'event and clk = '0' and stall = '0') then 
-            if(opcode_in = "1000") then
-                if(eq_in = '1') then 
-                    mem_code <= alu_out_in;
-                else
-                    mem_code <= pc_in;
-                end if;
-            
-            elsif(opcode_in = "1001" or opcode_in = "1010" or opcode_in = "1011") then
-                mem_code <= alu_out_in;
-            end if;
-        end if;
-    end process;
+    --begin
+    --    if(clk'event and clk = '0' and stall = '0') then 
+    --        if(opcode_in = "1000") then
+    --            if(eq_in = '1') then 
+    --                mem_code <= alu_out_in;
+    --            else
+    --                mem_code <= pc_in;
+    --            end if;
+    --        
+    --        elsif(opcode_in = "1001" or opcode_in = "1010" or opcode_in = "1011") then
+    --            mem_code <= alu_out_in;
+    --        end if;
+    --    end if;
+    --end process;
 
-    store_data: process(clk,reset,stall)
+    store_data: process(opcode_in,ra_in)
 
     begin 
-        if(clk'event and clk = '0' and stall = '0') then
             if(opcode_in = "0101") then
-                mem_data <= alu_out_in;
+                --mem_data <= alu_out_in;
                 data <= ra_in;
                 enable <= '1';
             else
                 enable <= '0';
             end if;
-        end if;
     end process;
+	 
+	 
 
 end architecture;

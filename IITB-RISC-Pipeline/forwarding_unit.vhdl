@@ -25,7 +25,7 @@ begin
 	fwd_reg_val <= reg_data;
 	fwd_write <= reg_write;
 	
-	process(ex_reg_addr,ma_reg_addr,wb_reg_addr,req_addr,ex_outval,ma_outval,wb_outval,ex_outcond,ex_write,ma_write,wb_write,ex_outc,ex_outz,ex_op,ma_op)
+	process(ex_reg_addr,ma_reg_addr,wb_reg_addr,req_addr,ex_outval,ex_outalu,ma_outval,wb_outval,ex_outcond,ex_write,ma_write,wb_write,ex_outc,ex_outz,ex_op,ma_op)
 	begin
 		if(req_addr = ex_reg_addr and ex_write = '1' and ex_outcond = "10" and ex_outc = '1' and (ex_op = "0001" or ex_op = "0010")) then
 			reg_data <= ex_outalu;
@@ -39,7 +39,7 @@ begin
 		elsif(req_addr = ex_reg_addr and ex_write = '1' and ex_op = "0000") then
 			reg_data <= ex_outalu;
 			reg_write <= '1';
-		elsif(req_addr = ex_reg_addr and ex_write = '1' and not (ex_op = "0001" or ex_op = "0010" or ex_op = "0000")) then 
+		elsif(req_addr = ex_reg_addr and ex_write = '1' and not (ex_op = "0001" or ex_op = "0010" or ex_op = "0000" or ex_op = "1111")) then 
 			reg_data <= ex_outval;
 			reg_write <= '1';
 		elsif(req_addr = ma_reg_addr and ma_write = '1' and ma_outcond = "10" and ma_outc = '1' and (ma_op = "0001" or ma_op = "0010")) then
@@ -51,7 +51,7 @@ begin
 		elsif(req_addr = ma_reg_addr and ma_write = '1' and (ma_outcond = "00" or ma_outcond = "11") and (ma_op = "0001" or ma_op = "0010")) then	
 			reg_data <= ma_outval;
 			reg_write <= '1';
-		elsif(req_addr = ma_reg_addr and ma_write = '1' and not (ma_op = "0001" or ma_op = "0010")) then 
+		elsif(req_addr = ma_reg_addr and ma_write = '1' and not (ma_op = "0001" or ma_op = "0010" or ma_op = "1111")) then 
 			reg_data <= ma_outval;
 			reg_write <= '1';
 		elsif(req_addr = wb_reg_addr and wb_write = '1') then

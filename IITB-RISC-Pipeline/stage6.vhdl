@@ -29,10 +29,9 @@ architecture wb_arch of write_back is
     reg_data <= reg_d;
     reg_write <= write_enable;
 
-    store_register : process(clk, reset, stall)
+    store_register : process(opcode_in,cond_in,alu_out,carry_in,z_in,pc_in)
 
     begin
-        if(clk'event and clk = '0' and stall = '0') then  
             if((opcode_in = "0001" and (cond_in="00" or cond_in ="11")) or (opcode_in="0010" and cond_in="00") or opcode_in = "0011" or opcode_in = "0111" ) then
                 reg_d <= alu_out;
                 write_enable <= '1'; 
@@ -48,7 +47,6 @@ architecture wb_arch of write_back is
             else
                 write_enable <= '0';
             end if;
-        end if;
     end process;
 
 end architecture;

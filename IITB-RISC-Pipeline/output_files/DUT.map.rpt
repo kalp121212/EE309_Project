@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DUT
-Sat May 07 17:53:00 2022
+Sun May 08 19:01:53 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -11,7 +11,25 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "pipeline:add_instance|write_back:stage6"
+ 10. Port Connectivity Checks: "pipeline:add_instance|MA_WB_reg:pipe_reg5"
+ 11. Port Connectivity Checks: "pipeline:add_instance|memory_access:stage5|code_memory:memory_access"
+ 12. Port Connectivity Checks: "pipeline:add_instance|memory_access:stage5"
+ 13. Port Connectivity Checks: "pipeline:add_instance|EX_MA_reg:pipe_reg4"
+ 14. Port Connectivity Checks: "pipeline:add_instance|execute:stage4|ALU:alu_use"
+ 15. Port Connectivity Checks: "pipeline:add_instance|execute:stage4"
+ 16. Port Connectivity Checks: "pipeline:add_instance|RR_EX_reg:pipe_reg3"
+ 17. Port Connectivity Checks: "pipeline:add_instance|register_file:rf"
+ 18. Port Connectivity Checks: "pipeline:add_instance|reg_read:stage3"
+ 19. Port Connectivity Checks: "pipeline:add_instance|ID_RR_reg:pipe_reg2"
+ 20. Port Connectivity Checks: "pipeline:add_instance|instr_decode:stage2"
+ 21. Port Connectivity Checks: "pipeline:add_instance|IF_ID_reg:pipe_reg1"
+ 22. Port Connectivity Checks: "pipeline:add_instance|instr_fetch:stage1|ALU:alu_pc"
+ 23. Port Connectivity Checks: "pipeline:add_instance|instr_fetch:stage1"
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -38,11 +56,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sat May 07 17:53:00 2022           ;
+; Analysis & Synthesis Status ; Successful - Sun May 08 19:01:53 2022       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; DUT                                         ;
 ; Top-level Entity Name       ; DUT                                         ;
 ; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 3                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
 
 
@@ -133,14 +155,234 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
-; pipeline.vhdl                    ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl ;         ;
-; DUT.vhdl                         ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl      ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+; sign_extend10.vhdl               ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend10.vhdl   ;         ;
+; forwarding_unit.vhdl             ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd              ;         ;
+; stage6.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl          ;         ;
+; stage5.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl          ;         ;
+; stage4.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl          ;         ;
+; stage3.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage3.vhdl          ;         ;
+; stage2.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl          ;         ;
+; stage1.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl          ;         ;
+; sign_extend7.vhdl                ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend7.vhdl    ;         ;
+; RR_EX.vhdl                       ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl           ;         ;
+; ROM.vhdl                         ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ROM.vhdl             ;         ;
+; register_file.vhdl               ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl   ;         ;
+; RAM.vhdl                         ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RAM.vhdl             ;         ;
+; pipeline.vhdl                    ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl        ;         ;
+; pad7.vhdl                        ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pad7.vhdl            ;         ;
+; MA_WB.vhdl                       ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl           ;         ;
+; lshift.vhdl                      ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/lshift.vhdl          ;         ;
+; IF_ID.vhdl                       ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl           ;         ;
+; ID_RR.vhdl                       ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl           ;         ;
+; EX_MA.vhdl                       ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl           ;         ;
+; DUT.vhdl                         ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl             ;         ;
+; comp.vhdl                        ; yes             ; User VHDL File  ; C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/comp.vhdl            ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 3     ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |DUT                       ; 0 (0)       ; 0            ; 0          ; 3    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT                ; DUT         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|write_back:stage6"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; stall  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; pc_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|MA_WB_reg:pipe_reg5" ;
++--------------+-------+----------+-------------------------------------+
+; Port         ; Type  ; Severity ; Details                             ;
++--------------+-------+----------+-------------------------------------+
+; write_enable ; Input ; Info     ; Stuck at VCC                        ;
++--------------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|memory_access:stage5|code_memory:memory_access"                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; mem_dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|memory_access:stage5" ;
++-------+-------+----------+---------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                     ;
++-------+-------+----------+---------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                                ;
++-------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|EX_MA_reg:pipe_reg4" ;
++--------------+-------+----------+-------------------------------------+
+; Port         ; Type  ; Severity ; Details                             ;
++--------------+-------+----------+-------------------------------------+
+; write_enable ; Input ; Info     ; Stuck at VCC                        ;
++--------------+-------+----------+-------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|execute:stage4|ALU:alu_use" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|execute:stage4" ;
++-------+-------+----------+---------------------------------------+
+; Port  ; Type  ; Severity ; Details                               ;
++-------+-------+----------+---------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                          ;
++-------+-------+----------+---------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|RR_EX_reg:pipe_reg3" ;
++--------------+-------+----------+-------------------------------------+
+; Port         ; Type  ; Severity ; Details                             ;
++--------------+-------+----------+-------------------------------------+
+; write_enable ; Input ; Info     ; Stuck at VCC                        ;
++--------------+-------+----------+-------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|register_file:rf"                                                    ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; write_pc    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; read_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; r7_pc       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|reg_read:stage3" ;
++-------+-------+----------+----------------------------------------+
+; Port  ; Type  ; Severity ; Details                                ;
++-------+-------+----------+----------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                           ;
++-------+-------+----------+----------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|ID_RR_reg:pipe_reg2" ;
++--------------+-------+----------+-------------------------------------+
+; Port         ; Type  ; Severity ; Details                             ;
++--------------+-------+----------+-------------------------------------+
+; write_enable ; Input ; Info     ; Stuck at VCC                        ;
++--------------+-------+----------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|instr_decode:stage2" ;
++-------+-------+----------+--------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                    ;
++-------+-------+----------+--------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                               ;
++-------+-------+----------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|IF_ID_reg:pipe_reg1" ;
++--------------+-------+----------+-------------------------------------+
+; Port         ; Type  ; Severity ; Details                             ;
++--------------+-------+----------+-------------------------------------+
+; write_enable ; Input ; Info     ; Stuck at VCC                        ;
++--------------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|instr_fetch:stage1|ALU:alu_pc"                                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[15..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sel      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; en       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; z        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline:add_instance|instr_fetch:stage1" ;
++-------+-------+----------+-------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                   ;
++-------+-------+----------+-------------------------------------------+
+; stall ; Input ; Info     ; Stuck at GND                              ;
++-------+-------+----------+-------------------------------------------+
 
 
 +-------------------------------+
@@ -149,10 +391,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat May 07 17:52:47 2022
+    Info: Processing started: Sun May 08 19:01:36 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-RISC_Pipeline -c DUT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file sign_extend10.vhdl
+    Info (12022): Found design unit 1: sign_extend10-extend10 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend10.vhdl Line: 10
+    Info (12023): Found entity 1: sign_extend10 File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend10.vhdl Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file forwarding_unit.vhdl
     Info (12022): Found design unit 1: forwarding_unit-forward File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 18
     Info (12023): Found entity 1: forwarding_unit File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 5
@@ -233,15 +478,565 @@ Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used exp
 Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall4" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
 Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall5" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
 Warning (10540): VHDL Signal Declaration warning at pipeline.vhdl(236): used explicit default value for signal "stall6" because signal was never assigned a value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 236
-Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(239): object "wb_pc" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 239
-Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(239): object "rfpc" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 239
-Error (10344): VHDL expression error at pipeline.vhdl(269): expression has 4 elements, but must have 16 elements File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 269
-Error (10346): VHDL error at pipeline.vhdl(269): formal port or parameter "opcode_in" must have actual or default value File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 269
-Error (12152): Can't elaborate user hierarchy "pipeline:add_instance" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 15
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 9 warnings
-    Error: Peak virtual memory: 4762 megabytes
-    Error: Processing ended: Sat May 07 17:53:00 2022
-    Error: Elapsed time: 00:00:13
-    Error: Total CPU time (on all processors): 00:00:27
+Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(237): object "nstall6" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 237
+Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(240): object "wb_pc" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 240
+Warning (10036): Verilog HDL or VHDL warning at pipeline.vhdl(240): object "rfpc" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 240
+Info (12128): Elaborating entity "instr_fetch" for hierarchy "pipeline:add_instance|instr_fetch:stage1" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 255
+Warning (10036): Verilog HDL or VHDL warning at stage1.vhdl(34): object "pc_carry" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl Line: 34
+Warning (10036): Verilog HDL or VHDL warning at stage1.vhdl(34): object "pc_z" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl Line: 34
+Info (12128): Elaborating entity "code_memory" for hierarchy "pipeline:add_instance|instr_fetch:stage1|code_memory:cmem" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl Line: 36
+Info (12128): Elaborating entity "ALU" for hierarchy "pipeline:add_instance|instr_fetch:stage1|ALU:alu_pc" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl Line: 37
+Warning (10492): VHDL Process Statement warning at ALU.vhd(37): signal "outSum" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 37
+Warning (10492): VHDL Process Statement warning at ALU.vhd(44): signal "outNAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at ALU.vhd(25): inferring latch(es) for signal or variable "outSum", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at ALU.vhd(25): inferring latch(es) for signal or variable "Cout", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at ALU.vhd(25): inferring latch(es) for signal or variable "Z", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at ALU.vhd(25): inferring latch(es) for signal or variable "outNAND", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[0]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[1]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[2]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[3]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[4]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[5]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[6]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[7]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[8]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[9]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[10]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[11]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[12]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[13]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[14]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outNAND[15]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "Z" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "Cout" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[0]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[1]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[2]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[3]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[4]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[5]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[6]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[7]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[8]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[9]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[10]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[11]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[12]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[13]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[14]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "outSum[15]" at ALU.vhd(25) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 25
+Info (10041): Inferred latch for "op[0]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[1]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[2]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[3]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[4]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[5]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[6]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[7]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[8]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[9]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[10]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[11]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[12]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[13]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[14]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (10041): Inferred latch for "op[15]" at ALU.vhd(23) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd Line: 23
+Info (12128): Elaborating entity "IF_ID_reg" for hierarchy "pipeline:add_instance|IF_ID_reg:pipe_reg1" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 257
+Info (10041): Inferred latch for "reg_data2[0]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[1]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[2]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[3]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[4]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[5]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[6]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[7]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[8]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[9]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[10]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[11]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[12]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[13]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[14]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data2[15]" at IF_ID.vhdl(18) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 18
+Info (10041): Inferred latch for "reg_data1[0]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[1]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[2]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[3]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[4]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[5]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[6]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[7]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[8]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[9]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[10]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[11]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[12]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[13]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[14]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (10041): Inferred latch for "reg_data1[15]" at IF_ID.vhdl(17) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl Line: 17
+Info (12128): Elaborating entity "instr_decode" for hierarchy "pipeline:add_instance|instr_decode:stage2" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 259
+Info (12128): Elaborating entity "sign_extend7" for hierarchy "pipeline:add_instance|instr_decode:stage2|sign_extend7:se7" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl Line: 45
+Info (12128): Elaborating entity "sign_extend10" for hierarchy "pipeline:add_instance|instr_decode:stage2|sign_extend10:se10" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl Line: 46
+Info (12128): Elaborating entity "pad7" for hierarchy "pipeline:add_instance|instr_decode:stage2|pad7:p7" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl Line: 47
+Info (12128): Elaborating entity "ID_RR_reg" for hierarchy "pipeline:add_instance|ID_RR_reg:pipe_reg2" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 261
+Info (10041): Inferred latch for "reg_data8[0]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[1]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[2]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[3]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[4]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[5]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[6]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[7]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[8]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[9]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[10]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[11]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[12]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[13]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[14]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data8[15]" at ID_RR.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data7[0]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[1]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[2]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[3]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[4]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[5]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[6]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[7]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[8]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[9]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[10]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[11]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[12]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[13]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[14]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data7[15]" at ID_RR.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data6[0]" at ID_RR.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data6[1]" at ID_RR.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data5[0]" at ID_RR.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data5[1]" at ID_RR.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data5[2]" at ID_RR.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data4[0]" at ID_RR.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data4[1]" at ID_RR.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data4[2]" at ID_RR.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data3[0]" at ID_RR.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data3[1]" at ID_RR.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data3[2]" at ID_RR.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data2[0]" at ID_RR.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[1]" at ID_RR.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[2]" at ID_RR.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[3]" at ID_RR.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data1[0]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[1]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[2]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[3]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[4]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[5]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[6]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[7]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[8]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[9]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[10]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[11]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[12]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[13]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[14]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[15]" at ID_RR.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl Line: 36
+Info (12128): Elaborating entity "reg_read" for hierarchy "pipeline:add_instance|reg_read:stage3" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 263
+Info (12128): Elaborating entity "left_shift" for hierarchy "pipeline:add_instance|reg_read:stage3|left_shift:lshift" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage3.vhdl Line: 37
+Info (12128): Elaborating entity "register_file" for hierarchy "pipeline:add_instance|register_file:rf" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 265
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(99): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 99
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(102): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 102
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(105): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 105
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(108): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 108
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(111): signal "R4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 111
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(114): signal "R5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 114
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(117): signal "R6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 117
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(120): signal "R7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 120
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(124): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 124
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(127): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 127
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(130): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 130
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(133): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 133
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(136): signal "R4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 136
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(139): signal "R5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 139
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(142): signal "R6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 142
+Warning (10492): VHDL Process Statement warning at register_file.vhdl(145): signal "R7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 145
+Warning (10631): VHDL Process Statement warning at register_file.vhdl(93): inferring latch(es) for signal or variable "D1_temp", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Warning (10631): VHDL Process Statement warning at register_file.vhdl(93): inferring latch(es) for signal or variable "D2_temp", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[0]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[1]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[2]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[3]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[4]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[5]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[6]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[7]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[8]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[9]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[10]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[11]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[12]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[13]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[14]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2_temp[15]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[0]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[1]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[2]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[3]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[4]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[5]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[6]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[7]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[8]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[9]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[10]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[11]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[12]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[13]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[14]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D1_temp[15]" at register_file.vhdl(93) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 93
+Info (10041): Inferred latch for "D2[0]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[1]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[2]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[3]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[4]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[5]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[6]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[7]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[8]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[9]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[10]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[11]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[12]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[13]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[14]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D2[15]" at register_file.vhdl(90) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 90
+Info (10041): Inferred latch for "D1[0]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[1]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[2]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[3]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[4]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[5]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[6]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[7]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[8]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[9]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[10]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[11]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[12]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[13]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[14]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (10041): Inferred latch for "D1[15]" at register_file.vhdl(89) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl Line: 89
+Info (12128): Elaborating entity "RR_EX_reg" for hierarchy "pipeline:add_instance|RR_EX_reg:pipe_reg3" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 267
+Info (10041): Inferred latch for "reg_data8[0]" at RR_EX.vhdl(45) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 45
+Info (10041): Inferred latch for "reg_data8[1]" at RR_EX.vhdl(45) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 45
+Info (10041): Inferred latch for "reg_data8[2]" at RR_EX.vhdl(45) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 45
+Info (10041): Inferred latch for "reg_data7[0]" at RR_EX.vhdl(44) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 44
+Info (10041): Inferred latch for "reg_data7[1]" at RR_EX.vhdl(44) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 44
+Info (10041): Inferred latch for "reg_data6[0]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[1]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[2]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[3]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[4]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[5]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[6]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[7]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[8]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[9]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[10]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[11]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[12]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[13]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[14]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data6[15]" at RR_EX.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data5[0]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[1]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[2]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[3]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[4]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[5]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[6]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[7]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[8]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[9]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[10]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[11]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[12]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[13]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[14]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data5[15]" at RR_EX.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data4[0]" at RR_EX.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data4[1]" at RR_EX.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data4[2]" at RR_EX.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data4[3]" at RR_EX.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[0]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[1]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[2]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[3]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[4]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[5]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[6]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[7]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[8]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[9]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[10]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[11]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[12]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[13]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[14]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data3[15]" at RR_EX.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[0]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[1]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[2]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[3]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[4]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[5]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[6]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[7]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[8]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[9]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[10]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[11]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[12]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[13]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[14]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data2[15]" at RR_EX.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[0]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[1]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[2]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[3]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[4]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[5]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[6]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[7]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[8]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[9]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[10]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[11]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[12]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[13]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[14]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data1[15]" at RR_EX.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl Line: 38
+Info (12128): Elaborating entity "execute" for hierarchy "pipeline:add_instance|execute:stage4" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 269
+Warning (10631): VHDL Process Statement warning at stage4.vhdl(66): inferring latch(es) for signal or variable "alu_select", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Warning (10631): VHDL Process Statement warning at stage4.vhdl(66): inferring latch(es) for signal or variable "alu_in1", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Warning (10631): VHDL Process Statement warning at stage4.vhdl(66): inferring latch(es) for signal or variable "enable", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Warning (10631): VHDL Process Statement warning at stage4.vhdl(66): inferring latch(es) for signal or variable "alu_in2", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[0]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[1]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[2]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[3]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[4]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[5]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[6]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[7]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[8]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[9]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[10]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[11]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[12]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[13]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[14]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in2[15]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "enable" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[0]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[1]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[2]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[3]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[4]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[5]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[6]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[7]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[8]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[9]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[10]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[11]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[12]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[13]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[14]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_in1[15]" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (10041): Inferred latch for "alu_select" at stage4.vhdl(66) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 66
+Info (12128): Elaborating entity "comparator" for hierarchy "pipeline:add_instance|execute:stage4|comparator:comp_use" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl Line: 64
+Info (12128): Elaborating entity "EX_MA_reg" for hierarchy "pipeline:add_instance|EX_MA_reg:pipe_reg4" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 271
+Info (10041): Inferred latch for "reg_data9" at EX_MA.vhdl(47) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 47
+Info (10041): Inferred latch for "reg_data8" at EX_MA.vhdl(46) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 46
+Info (10041): Inferred latch for "reg_data7" at EX_MA.vhdl(45) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 45
+Info (10041): Inferred latch for "reg_data6[0]" at EX_MA.vhdl(44) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 44
+Info (10041): Inferred latch for "reg_data6[1]" at EX_MA.vhdl(44) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 44
+Info (10041): Inferred latch for "reg_data6[2]" at EX_MA.vhdl(44) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 44
+Info (10041): Inferred latch for "reg_data5[0]" at EX_MA.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data5[1]" at EX_MA.vhdl(43) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 43
+Info (10041): Inferred latch for "reg_data4[0]" at EX_MA.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data4[1]" at EX_MA.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data4[2]" at EX_MA.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data4[3]" at EX_MA.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data3[0]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[1]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[2]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[3]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[4]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[5]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[6]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[7]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[8]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[9]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[10]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[11]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[12]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[13]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[14]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data3[15]" at EX_MA.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data2[0]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[1]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[2]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[3]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[4]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[5]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[6]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[7]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[8]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[9]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[10]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[11]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[12]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[13]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[14]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data2[15]" at EX_MA.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data1[0]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[1]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[2]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[3]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[4]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[5]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[6]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[7]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[8]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[9]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[10]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[11]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[12]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[13]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[14]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data1[15]" at EX_MA.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl Line: 39
+Info (12128): Elaborating entity "memory_access" for hierarchy "pipeline:add_instance|memory_access:stage5" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 273
+Warning (10541): VHDL Signal Declaration warning at stage5.vhdl(48): used implicit default value for signal "mem_code" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 48
+Warning (10036): Verilog HDL or VHDL warning at stage5.vhdl(48): object "next_instr" assigned a value but never read File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 48
+Warning (10631): VHDL Process Statement warning at stage5.vhdl(83): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[0]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[1]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[2]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[3]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[4]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[5]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[6]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[7]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[8]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[9]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[10]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[11]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[12]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[13]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[14]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (10041): Inferred latch for "data[15]" at stage5.vhdl(83) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 83
+Info (12128): Elaborating entity "data_memory" for hierarchy "pipeline:add_instance|memory_access:stage5|data_memory:data_memory_access" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl Line: 64
+Info (12128): Elaborating entity "MA_WB_reg" for hierarchy "pipeline:add_instance|MA_WB_reg:pipe_reg5" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 275
+Info (10041): Inferred latch for "reg_data7" at MA_WB.vhdl(42) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 42
+Info (10041): Inferred latch for "reg_data6" at MA_WB.vhdl(41) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 41
+Info (10041): Inferred latch for "reg_data5[0]" at MA_WB.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data5[1]" at MA_WB.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data5[2]" at MA_WB.vhdl(40) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 40
+Info (10041): Inferred latch for "reg_data4[0]" at MA_WB.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data4[1]" at MA_WB.vhdl(39) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 39
+Info (10041): Inferred latch for "reg_data3[0]" at MA_WB.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data3[1]" at MA_WB.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data3[2]" at MA_WB.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data3[3]" at MA_WB.vhdl(38) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 38
+Info (10041): Inferred latch for "reg_data2[0]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[1]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[2]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[3]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[4]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[5]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[6]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[7]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[8]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[9]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[10]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[11]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[12]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[13]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[14]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data2[15]" at MA_WB.vhdl(37) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 37
+Info (10041): Inferred latch for "reg_data1[0]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[1]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[2]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[3]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[4]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[5]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[6]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[7]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[8]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[9]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[10]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[11]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[12]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[13]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[14]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (10041): Inferred latch for "reg_data1[15]" at MA_WB.vhdl(36) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl Line: 36
+Info (12128): Elaborating entity "write_back" for hierarchy "pipeline:add_instance|write_back:stage6" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 277
+Warning (10631): VHDL Process Statement warning at stage6.vhdl(32): inferring latch(es) for signal or variable "reg_d", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[0]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[1]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[2]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[3]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[4]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[5]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[6]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[7]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[8]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[9]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[10]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[11]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[12]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[13]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[14]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (10041): Inferred latch for "reg_d[15]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
+Info (12128): Elaborating entity "forwarding_unit" for hierarchy "pipeline:add_instance|forwarding_unit:forwarder1" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 279
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(45): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 45
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(45): signal "ma_outc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 45
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(48): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 48
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(48): signal "ma_outz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 48
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(51): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 51
+Warning (10631): VHDL Process Statement warning at forwarding_unit.vhdl(28): inferring latch(es) for signal or variable "reg_data", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[0]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[1]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[2]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[3]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[4]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[5]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[6]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[7]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[8]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[9]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[10]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[11]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[12]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[13]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[14]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Info (10041): Inferred latch for "reg_data[15]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output_vector[0]" is stuck at VCC File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 5
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "input_vector[0]" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 4
+    Warning (15610): No output dependent on input pin "input_vector[1]" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl Line: 4
+Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 4757 megabytes
+    Info: Processing ended: Sun May 08 19:01:53 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:35
 
 

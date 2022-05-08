@@ -55,6 +55,7 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name VHDL_FILE sign_extend10.vhdl
 set_global_assignment -name VHDL_FILE forwarding_unit.vhdl
 set_global_assignment -name VHDL_FILE ALU.vhd
 set_global_assignment -name VHDL_FILE Testbench.vhdl
@@ -79,3 +80,11 @@ set_global_assignment -name VHDL_FILE ID_RR.vhdl
 set_global_assignment -name VHDL_FILE EX_MA.vhdl
 set_global_assignment -name VHDL_FILE DUT.vhdl
 set_global_assignment -name VHDL_FILE comp.vhdl
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Testbench.vhdl -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME Testbench.vhdl -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id Testbench.vhdl
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Testbench -section_id Testbench.vhdl
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbench.vhdl -section_id Testbench.vhdl
+set_global_assignment -name EDA_TEST_BENCH_FILE TRACEFILE.txt -section_id Testbench.vhdl
