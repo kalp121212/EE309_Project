@@ -12,18 +12,18 @@
 # 
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend10.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:52 on May 08,2022
+# Start time: 15:29:32 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend10.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity sign_extend10
 # -- Compiling architecture extend10 of sign_extend10
-# End time: 18:58:52 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:32 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:52 on May 08,2022
+# Start time: 15:29:32 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,22 +31,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity forwarding_unit
 # -- Compiling architecture forward of forwarding_unit
-# End time: 18:58:52 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:33 on May 09,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:52 on May 08,2022
+# Start time: 15:29:33 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ALU
 # -- Compiling architecture a1 of ALU
-# End time: 18:58:53 on May 08,2022, Elapsed time: 0:00:01
+# End time: 15:29:33 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:53 on May 08,2022
+# Start time: 15:29:33 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -54,11 +54,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity write_back
 # -- Compiling architecture wb_arch of write_back
-# End time: 18:58:53 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:33 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:53 on May 08,2022
+# Start time: 15:29:33 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage5.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -66,11 +66,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity memory_access
 # -- Compiling architecture ma_arch of memory_access
-# End time: 18:58:53 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:33 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:53 on May 08,2022
+# Start time: 15:29:33 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage4.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -78,11 +78,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity execute
 # -- Compiling architecture ex_arch of execute
-# End time: 18:58:53 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:33 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage3.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:53 on May 08,2022
+# Start time: 15:29:33 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage3.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -90,11 +90,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity reg_read
 # -- Compiling architecture rr_arch of reg_read
-# End time: 18:58:54 on May 08,2022, Elapsed time: 0:00:01
+# End time: 15:29:34 on May 09,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:54 on May 08,2022
+# Start time: 15:29:34 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage2.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -102,11 +102,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity instr_decode
 # -- Compiling architecture id_arch of instr_decode
-# End time: 18:58:54 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:34 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:54 on May 08,2022
+# Start time: 15:29:34 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage1.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -114,22 +114,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity instr_fetch
 # -- Compiling architecture if_arch of instr_fetch
-# End time: 18:58:54 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:34 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend7.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:54 on May 08,2022
+# Start time: 15:29:34 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/sign_extend7.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity sign_extend7
 # -- Compiling architecture extend7 of sign_extend7
-# End time: 18:58:54 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:34 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:54 on May 08,2022
+# Start time: 15:29:35 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RR_EX.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -137,11 +137,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity RR_EX_reg
 # -- Compiling architecture reg of RR_EX_reg
-# End time: 18:58:55 on May 08,2022, Elapsed time: 0:00:01
+# End time: 15:29:35 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ROM.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:55 on May 08,2022
+# Start time: 15:29:35 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ROM.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -149,22 +149,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity code_memory
 # -- Compiling architecture memory_a of code_memory
-# End time: 18:58:55 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:35 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:55 on May 08,2022
+# Start time: 15:29:35 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/register_file.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity register_file
 # -- Compiling architecture rf of register_file
-# End time: 18:58:55 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:35 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RAM.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:55 on May 08,2022
+# Start time: 15:29:35 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/RAM.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -172,11 +172,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity data_memory
 # -- Compiling architecture memory_a of data_memory
-# End time: 18:58:55 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:35 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:55 on May 08,2022
+# Start time: 15:29:35 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -184,22 +184,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity pipeline
 # -- Compiling architecture final of pipeline
-# End time: 18:58:56 on May 08,2022, Elapsed time: 0:00:01
+# End time: 15:29:36 on May 09,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pad7.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:56 on May 08,2022
+# Start time: 15:29:36 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pad7.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity pad7
 # -- Compiling architecture pad of pad7
-# End time: 18:58:56 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:36 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:56 on May 08,2022
+# Start time: 15:29:36 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/MA_WB.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -207,22 +207,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity MA_WB_reg
 # -- Compiling architecture reg of MA_WB_reg
-# End time: 18:58:56 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:36 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/lshift.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:56 on May 08,2022
+# Start time: 15:29:36 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/lshift.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity left_shift
 # -- Compiling architecture shift of left_shift
-# End time: 18:58:56 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:36 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:56 on May 08,2022
+# Start time: 15:29:36 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/IF_ID.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -230,11 +230,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity IF_ID_reg
 # -- Compiling architecture reg of IF_ID_reg
-# End time: 18:58:56 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:37 on May 09,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:57 on May 08,2022
+# Start time: 15:29:37 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/ID_RR.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -242,11 +242,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ID_RR_reg
 # -- Compiling architecture reg of ID_RR_reg
-# End time: 18:58:57 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:37 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:57 on May 08,2022
+# Start time: 15:29:37 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/EX_MA.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -254,46 +254,46 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity EX_MA_reg
 # -- Compiling architecture reg of EX_MA_reg
-# End time: 18:58:57 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:37 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:57 on May 08,2022
+# Start time: 15:29:37 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/DUT.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity DUT
 # -- Compiling architecture DutWrap of DUT
-# End time: 18:58:57 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:37 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/comp.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:57 on May 08,2022
+# Start time: 15:29:38 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/comp.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity comparator
 # -- Compiling architecture compare of comparator
-# End time: 18:58:58 on May 08,2022, Elapsed time: 0:00:01
+# End time: 15:29:38 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/Testbench.vhdl}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:58:58 on May 08,2022
+# Start time: 15:29:38 on May 09,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/Testbench.vhdl 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Testbench
 # -- Compiling architecture Behave of Testbench
-# End time: 18:58:58 on May 08,2022, Elapsed time: 0:00:00
+# End time: 15:29:38 on May 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
-# Start time: 18:58:58 on May 08,2022
+# Start time: 15:29:38 on May 09,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -338,18 +338,36 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 462 ns  Iteration: 3  Instance: /testbench/dut_instance/add_instance/stage5/data_memory_access
 # ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 2, found 0.
-#    Time: 2464 ns  Iteration: 0  Instance: /testbench
+#    Time: 3388 ns  Iteration: 0  Instance: /testbench
 # ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
-#    Time: 2464 ns  Iteration: 0  Instance: /testbench
+#    Time: 3388 ns  Iteration: 0  Instance: /testbench
 # ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
-#    Time: 2464 ns  Iteration: 0  Instance: /testbench
+#    Time: 3388 ns  Iteration: 0  Instance: /testbench
 # ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 2, found 0.
-#    Time: 2618 ns  Iteration: 0  Instance: /testbench
+#    Time: 3542 ns  Iteration: 0  Instance: /testbench
 # ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
-#    Time: 2618 ns  Iteration: 0  Instance: /testbench
+#    Time: 3542 ns  Iteration: 0  Instance: /testbench
 # ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
-#    Time: 2618 ns  Iteration: 0  Instance: /testbench
+#    Time: 3542 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 2, found 0.
+#    Time: 3696 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
+#    Time: 3696 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
+#    Time: 3696 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 2, found 0.
+#    Time: 3850 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
+#    Time: 3850 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
+#    Time: 3850 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 2, found 0.
+#    Time: 4004 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
+#    Time: 4004 ns  Iteration: 0  Instance: /testbench
+# ** Error: (vsim-3549) TEXTIO procedure READ(BIT_VECTOR) : Wrong BIT_VECTOR length. Expected 1, found 0.
+#    Time: 4004 ns  Iteration: 0  Instance: /testbench
 # ** Note: SUCCESS, all tests passed.
-#    Time: 2772 ns  Iteration: 0  Instance: /testbench
-# End time: 18:59:20 on May 08,2022, Elapsed time: 0:00:22
-# Errors: 6, Warnings: 4
+#    Time: 4158 ns  Iteration: 0  Instance: /testbench
+# End time: 15:30:08 on May 09,2022, Elapsed time: 0:00:30
+# Errors: 15, Warnings: 4

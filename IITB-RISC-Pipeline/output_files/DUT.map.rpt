@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DUT
-Sun May 08 19:01:53 2022
+Mon May 09 15:29:07 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun May 08 19:01:53 2022       ;
+; Analysis & Synthesis Status ; Successful - Mon May 09 15:29:07 2022       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; DUT                                         ;
 ; Top-level Entity Name       ; DUT                                         ;
@@ -391,7 +391,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun May 08 19:01:36 2022
+    Info: Processing started: Mon May 09 15:28:51 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-RISC_Pipeline -c DUT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1003,11 +1003,11 @@ Info (10041): Inferred latch for "reg_d[13]" at stage6.vhdl(32) File: C:/Users/A
 Info (10041): Inferred latch for "reg_d[14]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
 Info (10041): Inferred latch for "reg_d[15]" at stage6.vhdl(32) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/stage6.vhdl Line: 32
 Info (12128): Elaborating entity "forwarding_unit" for hierarchy "pipeline:add_instance|forwarding_unit:forwarder1" File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/pipeline.vhdl Line: 279
-Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(45): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 45
-Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(45): signal "ma_outc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 45
 Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(48): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 48
-Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(48): signal "ma_outz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 48
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(48): signal "ma_outc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 48
 Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(51): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 51
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(51): signal "ma_outz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 51
+Warning (10492): VHDL Process Statement warning at forwarding_unit.vhdl(54): signal "ma_outcond" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 54
 Warning (10631): VHDL Process Statement warning at forwarding_unit.vhdl(28): inferring latch(es) for signal or variable "reg_data", which holds its previous value in one or more paths through the process File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
 Info (10041): Inferred latch for "reg_data[0]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
 Info (10041): Inferred latch for "reg_data[1]" at forwarding_unit.vhdl(28) File: C:/Users/Aayush Rajesh/Desktop/IIT-B/Semester 4/EE309/IITB-RISC-Pipeline/forwarding_unit.vhdl Line: 28
@@ -1034,9 +1034,9 @@ Info (21057): Implemented 3 device resources after synthesis - the final resourc
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 1 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 4757 megabytes
-    Info: Processing ended: Sun May 08 19:01:53 2022
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Mon May 09 15:29:07 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:37
 
 

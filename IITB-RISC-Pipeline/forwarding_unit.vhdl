@@ -39,6 +39,9 @@ begin
 		elsif(req_addr = ex_reg_addr and ex_write = '1' and ex_op = "0000") then
 			reg_data <= ex_outalu;
 			reg_write <= '1';
+		elsif(req_addr = ex_reg_addr and ex_write = '1' and (ex_op = "0011" or ex_op = "0111" or ex_op = "0101")) then
+			reg_data <= ex_outalu;
+			reg_write <= '1';
 		elsif(req_addr = ex_reg_addr and ex_write = '1' and not (ex_op = "0001" or ex_op = "0010" or ex_op = "0000" or ex_op = "1111")) then 
 			reg_data <= ex_outval;
 			reg_write <= '1';

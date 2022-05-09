@@ -32,7 +32,7 @@ architecture wb_arch of write_back is
     store_register : process(opcode_in,cond_in,alu_out,carry_in,z_in,pc_in)
 
     begin
-            if((opcode_in = "0001" and (cond_in="00" or cond_in ="11")) or (opcode_in="0010" and cond_in="00") or opcode_in = "0011" or opcode_in = "0111" ) then
+            if((opcode_in = "0001" and (cond_in="00" or cond_in ="11")) or (opcode_in="0010" and cond_in="00") or opcode_in = "0011" or opcode_in = "0111" or opcode_in = "0000") then
                 reg_d <= alu_out;
                 write_enable <= '1'; 
             elsif ((opcode_in = "0001" and cond_in="10") or (opcode_in = "0010" and cond_in="10")) then

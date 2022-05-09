@@ -30,11 +30,13 @@ architecture rr_arch of reg_read is
 		);
 	end component;
 	
-	signal rb_lshift : std_logic_vector(15 downto 0);
+	signal rb_lshift,lshift_in : std_logic_vector(15 downto 0);
 
 begin
 
-	lshift : left_shift port map(input => rb_val_in, output => rb_lshift);
+	lshift : left_shift port map(input => lshift_in, output => rb_lshift);
+	
+	lshift_in <= fwd_val2 when fwd_en2 = '1' else rb_val_in;
 	
 	opcode_out <= opcode_in;
 	rc_out <= rc_in when opcode_in = "0001" or opcode_in = "0010" else
@@ -45,8 +47,8 @@ begin
 	pc_out <= pc_in;
 	ra_val_out <= fwd_val1 when fwd_en1 = '1' else 
 				  ra_val_in;
-	rb_val_out <= fwd_val2 when fwd_en2 = '1' else 
-				  rb_lshift when cond_in = "11" else 
-				  rb_val_in;
+	rb_val_out <= rb_lshift when cond_in = "11" and (opcode_in = "0001")  else 
+					  fwd_val2 when fwd_en2 = '1' else 
+				     rb_val_in;
 	
 end architecture;

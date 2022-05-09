@@ -13,7 +13,7 @@ end entity;
 
 architecture memory_a of code_memory is
 type memory_array is array( 0 to 65535 ) of std_logic_vector(15 downto 0);
-signal data : memory_array := (0 => "0011010100001111", others => (others => '1')); --Load with Program
+signal data : memory_array := (0 => "0011010100001111", 1 => "0011011101001111", 2 => "0001010011000011", 3 => "0101000010000111", 4 => "0111100010000111", others => (others => '1')); --Load with Program
 
 begin
             
